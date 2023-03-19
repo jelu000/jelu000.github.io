@@ -15,14 +15,23 @@ class Bil {
 
 let billista = [];
 
-/**getDataFromLocalStorage() Hämtar data localstorage */
+/**getDataFromLocalStorage() Hämtar data localstorage */ 
 async function getDataFromLocalStorage(){
     try {
+          
         billista = await JSON.parse(localStorage.getItem("bilarlistan") );
+
+        //Om billistan  är tom Null från localStorage
+        if (billista == null)
+            billista = []
+        
         lista_bilar_div.innerHTML = "";
+        
+        //if (billista != null)
         billista.forEach(createHtmlBilLista);
     }
     catch (e){
+        
         console.log(`Fel: ${e}`)
     }
 }
@@ -68,6 +77,7 @@ function addButtonClick(){
     if (brandname != ""){
         let car = new Bil(brand.value, color.value, id);
         billista.push(car);
+        
         localStorage.setItem("bilarlistan" , JSON.stringify(billista));
         brand.value = "";
         color.value = "";
@@ -85,20 +95,18 @@ function addButtonClick(){
 /**deletBil() tarbort bil--------------- */
 let deleteBil = (e) => {
 
-    const ny_billista = billista.filter((o, i) => o.bid !== e.target.id)
-    //console.log(`ny_billista= ${JSON.stringify(ny_billista)}`)
+        const ny_billista = billista.filter((o, i) => o.bid !== e.target.id)
+        //console.log(`ny_billista= ${JSON.stringify(ny_billista)}`)
 
-    //Tilldelar ny_billista till gamla billistan
-    billista = ny_billista;
-    //Skriver till localstorage
-    localStorage.setItem("bilarlistan" , JSON.stringify(billista));
-    //läser från localstorage och skriver html elementen
-    getDataFromLocalStorage();
+        //Tilldelar ny_billista till gamla billistan
+        billista = ny_billista;
+        //Skriver till localstorage
+        localStorage.setItem("bilarlistan" , JSON.stringify(billista));
+        //läser från localstorage och skriver html elementen
+        getDataFromLocalStorage();    
 }
 
-window.addEventListener("click", deleteBil)
-
-
+window.addEventListener("click", deleteBil);
 
 
 
