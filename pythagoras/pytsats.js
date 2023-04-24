@@ -54,24 +54,26 @@ function kalkyleraClick() {
         let adderat = int_tal1_upph + int_tal2_upph;
         let roten_ur = Math.sqrt(adderat);
 
-        str_svar = `${tal1}&sup2; + ${tal2}&sup2; = 
+        str_svar = `<b>Hypotenusa:</b><br><br>
+        ${tal1}&sup2; + ${tal2}&sup2; = 
         <br> 
         ${int_tal1_upph} + ${int_tal2_upph} = ${adderat}
         <br>
         Roten ur: ${adderat} = ${roten_ur.toFixed(2)} 
-        `
+         `
 
       }
       else {
         let subtraherat = int_tal2_upph - int_tal1_upph;
         let roten_ur = Math.sqrt(subtraherat);
 
-        str_svar = `${tal2}&sup2; - ${tal1}&sup2; = 
+        str_svar = `<b>Katet:</b><br><br>
+        ${tal2}&sup2; - ${tal1}&sup2; = 
         <br> 
         ${int_tal2_upph} - ${int_tal1_upph} = ${subtraherat}
         <br>
         Roten ur: ${subtraherat} = ${roten_ur.toFixed(2)} 
-        `
+         `
 
       }
 
