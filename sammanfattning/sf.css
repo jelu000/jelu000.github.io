@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    margin-left: 20px;
+    color: white;
+}
+
+p.kod{
+    margin-left: 20px;
+    color: greenyellow;
+}
+
+div.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    /*border-radius: 20px*/;
+}
+
+h2{
+    margin-top: 20px;
+    color: white;
+}
+h3{
+    margin-top: 20px;
+    margin-left: 20px;
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+ul{
+    color: coral;
+}
+b{
+    margin-top: 20px;
+    color:aquamarine;
+}
