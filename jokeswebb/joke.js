@@ -25,7 +25,7 @@ function getJoke(e) {
             
             //console.log(`${response.joke}`)
             let joke = response.joke
-            pjoke.innerHTML = joke;
+            p_joke.innerHTML = joke;
 
             
         })
