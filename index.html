@@ -1,39 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min sida</title>
-    <link rel="stylesheet" href="alle.css">
-</head>
+<html lang="sv">
+<title>Jens Lundeqvist</title>
+<meta charset="UTF-8">
+
+
+<meta name="author" content="jens" >
+<meta name="date" content="2021" >
+<meta name="copyright" content="Jens Lundeqvist">
+<meta name="keywords" content="Jens Lundeqvist">
+<meta name="description" content="Jens Lundeqvists sida på webben.">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<link rel="stylesheet" href="./css/w3.css">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">-->
+<link rel="stylesheet" href="./css/w3-theme-black.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" href="./css/font-awesome.min.css">-->
+
+<link href="favicon.ico" rel="icon"/>
+<link href="favicon.ico" type="image/ico" rel="shortcut icon"/>
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
 <body>
-    <a href="lotteri/index.html" target="_blank" rel="noopener noreferrer"></a>
-    <div>
-        <h1>Några länkar</h1>
-            <ul>
-                
-                <li><a href="knapp/knappen.html">Knappen som visar javascript och event</a></li>
-                <li><a href="gissa/gissa.html" target="_blank" rel="noopener noreferrer">Gissatalet</a></li>
-                <li><a href="jsonfil/jsontest.html">Hämtar json data från jsonfil på server</a></li>
-                <li><a href="lotteri_webb/lotteri.html" rel="noopener noreferrer">Pröva turen i ett lotteri</a></li>
-                <li><a href="pythagoras/pytsats.html" rel="noopener noreferrer">Pythagoras sats</a></li>
-                <li><a href="exam/jensexarbete.html" rel="noopener noreferrer">Jens examens arbetete</a></li>
-                
-                <li><a href="getpersonnr/index.html" target="_blank" rel="noopener noreferrer">Hämta personnummer </a></li>
-                <li><a href="jokeswebb/joke.html" target="_blank" rel="noopener noreferrer">Roliga historier </a></li>
-            
-            
-            </ul>
 
-            <br>
-            <hr>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#div_start" class="w3-bar-item w3-button w3-theme-l1">Start</a>
+    <a href="#div_om" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Om</a>
+    <a href="#div_kontakt" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Kontakt</a>
+    <a href="#div_lankar" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Länkar</a>
 
-            <p>Länk till roligt API: https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single</p>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Mina Länkar</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="./bilskatt/" target="_blank"  title="Förmånsbeskattning av bil">Förmånsbeskattning av bil</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="./bokforing/" target="_blank"  title="Bokföring av lön">Bokföring av lön</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="./swishreader/" target="_blank" title="Swishtransaktioner hos swedbank">Swish-transaktioner</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="./bokforing/momsen.html" target="_blank" title="Bokföra dagskassa">Bokföra dagskassa</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="http://salongnobless.se/bokatid/" target="_blank"  title="Bokningsprogram">Bokningsprogram i Java</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="http://salongnobless.se/friskvard/" target="_blank"  title="Aktivitetsersättning 2021">Aktivitetsersättning 2021</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="https://jelu000.github.io/personnummer/" target="_blank"  title="Test-personnummer">Test-personnummer</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="http://github.com/jelu000/" target="_blank"  title="GitHub">Mitt GitHub</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+
+  <div id="div_start" class="w3-row w3-padding-64">
+
+    <div class="w3-twothird w3-container">
+
+      <h1 class="w3-text-teal">Start</h1>
+      <img src="keyboard6.png" width="240" height="39" alt="keyboard">
+      <p>
+        Den här sidan har jag utvecklade för att lägga information om mig och saker jag gjort. Det mesta är programmering men en del handlar om ekonomi och bokföring.
+        Länkar till sakerna ligger till vänster och längst ner på sidan.
+        Samma länkar finns också längst ner på sidan med  en liten text som ger en kort förklaring till vad länken innehåller.
+      </p>
+    </div>
+    <!--<div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>-->
+  </div>
+                    <!--class="w3-row"-->
+  <div id="div_om" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Om</h1>
+      <img src="JensFBprofil3.png" width="197" height="200" alt="keyboard">
+      <p>
+        Mitt namn är Jens Lundeqvist och jag bor i Östersund och jobbar som frisör till vardags.
+        Jag har examen i datateknik från Mittuniversitet och en ekonomiutbildning som ekonomi/löneassistent från Avans.
+      </p>
+      <p>
+        Min kandidatexamen från Mittuniversitet tog jag 2005.
+        Utbildningen hette Programvaruteknik och är inriktad mot mjukvaruutveckling och programmering vilket jag tycker är kul och spännande.
+        Programmeringsspråk jag behärskar är Java, Javascript, C#, C++, PHP, TypeScript och lite Python.
+
+      </p>
+
+      <p>
+        2019 läste jag till ekonomi/löneassistent hos  <a href="http://www.avans.se" target="_blank" title="Avans">Avans</a> där fick vi både jobba praktiskt och teoretisk lära oss företagsekonomi.
+        Vi lärde oss använda program så som Fortnox och Visma men också Officepaketet.
+        Praktik ingick också i utbildningen vilken jag tillbringade hos   <a href="https://a2revision.se/" target="_blank" title="a2 revision">a2 revision</a> i Östersund.
+      </p>
+
+      <p>
+        Våren 2020 läste jag en distanskurs i programmering mot Luleå Tekniska Universitet.
+        Kursen heter Introduktion till programmering och C#. Jag tänkte läsa del 2 nu men den blev tyvärr inställd.
+      </p>
+
+    </div>
+    <!--<div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>-->
+  </div>
+
+  <div id="div_kontakt" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Kontakt</h1>
+      <br>
+      <form action="mailto: jens.lundeqvist@outlook.com" method="POST" enctype="multipart/form-data">
+       <div>
+         <label for="name">Ditt namn:</label>
+         <input type="text" name="name" id="name" />
+       </div>
+       <br>
+       <div>
+          <label for="email">Din email:</label>
+          <input type="text" name="email" id="email" />
+       </div>
+       <br>
+       <div>
+         <label>Meddelande:</label>
+         <br>
+         <textarea name="comments" rows="12" cols="35"></textarea>
+       </div>
+        <br>
+       <div>
+         <input type="submit" name="submit" value="Skicka" />
+         <input type="reset" name="reset" value="Rensa" />
+       </div>
+     </form>
+
+
+    </div>
+    <!--  <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div> -->
+  </div>
+
+  <div id="div_lankar" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Länkar</h1>
+
+
+          <p><a href="http://salongnobless.se/bilskatt/" target="_blank"  title="Förmånsbeskattning av bil">Förmånsbeskattning av bil:</a>
+            En sida jag gjorde för att lära mig programmerings biblioteket React. Sidan hämtar data från skatteverkets api för bilförmån. Här kan man söka bland olika bilfabrikat och
+            deras koder som används tillsammans med registreringsnummer för avdrag på lön för bilförmån.
+            <b>Programmeringsverktyg: Atom, React, Javascript, JSX, XML, GIT och Skatteverkets API</b>
+          </p>
+
+          <p><a href="./bokforing/" target="_blank"  title="Bokföring av lön">Bokföring av lön:</a>
+            En sida i Javascript som visar hur tabeller för preliminär skatt och skattetabell för löntagare. Sidan försöker visa hur dessa 2 tabeller hänger ihop.
+            Finns också ett formulär som visar hur man bokför skatt och arbetsgivaravgift för anställda.
+            <b>Programmeringsverktyg: Atom, Javascript, HTML, JSON, GIT och Skatteverkets API</b>
+          </p>
+
+          <p><a href="./bokforing/momsen.html" target="_blank"  title="Bokföra dagskassor">Bokföra-dagskassor:</a>
+            Denna sida är gjord i Javascript och jag använder den själv när jag bokför dagskassor. Eftersom vi säljer både produkter och tjänster ska dettaa bokföras på olika konton.
+            Dessutom tar vi betalt både kontanter och bankinsättning via Swish och denna sida visar då vilka konton som ska bokföras.
+            <b>Programmeringsverktyg: VS Code, Javascript och HTML</b>
+          </p>
+
+          <p><a href="./swishreader/" target="_blank" title="Swishtransaktioner hos swedbank">Slå ihop swish-transaktioner konto hos Swedbank:</a>
+            Eftersom vi använder Swish och har företagskonto hos Swedbank så saknade jag ett sätt att lätt slå ihop Swish Transaktioner för dagar för att lättare stämma av bank konto 1930.
+            Det Löste jag med Javascript och denna sida som kan omvandla ett företagskonto utdrag hämtat Swedbank i .xls format och sedan visa sammanslagna Swish inbetalningar per dag.
+            <b>Programmeringsverktyg: VS Code, Javascript, HTML och GIT</b>
+          </p>
+
+          <p><a href="http://salongnobless.se/subdir/" target="_blank"  title="Enkel räknare i React">Enkel räknare i React:</a>
+            En enkel räknare jag kodade i React mest för att se om jag kunde lägga räknaren/appen i en undermapp på webbservern.
+            <b>Programmeringsverktyg: Atom, React, Javascript, JSX</b>
+          </p>
+
+          <p><a href="http://salongnobless.se/bokatid/" target="_blank"  title="Bokningsprogram i Java">Bokningsprogram i Java:</a>
+            Detta Java program gjorde jag redan 2009 och använder det fortfarande idag. Har även programmerat en webb bokningsmodul i PHP och mySQL så kunder kan boka vi Internet.
+            <b>Programmeringsverktyg Klient: NetBeans, Java och <a href="https://db.apache.org/derby/" target="_blank">Derby databas</a>. Server: NetBeans, PHP, HTML och MySQL databas.</b>
+          </p>
+
+          <p><a href="http://salongnobless.se/friskvard/" target="_blank"  title="Friskvårdsersättning">Skattefri friskvårdsersättning:</a>
+            Här listar jag aktiviteter som omfattas inom ramen för skattefri löneförmån, aktiviteten får inte ha ett större värde än 5000:- år 2021 enligt
+            <a href="https://www.skatteverket.se/privat/skatter/arbeteochinkomst/formaner.4.3a2a542410ab40a421c80001009.html" target="_blank">Skatteverket</a>.
+          </p>
+          <p><a href="https://jelu000.github.io/personnummer/" target="_blank" title="Test-personnummer">slumpad Test-personnummer-serie från Skatteverkets API. </a>
+          <p><a href="https://github.com/jelu000/" target="_blank" title="Github">Mitt GitHub konto:</a>
+            Här är mitt GitHub konto.
+          </p>
+
+        <h4>Skolor</h4>
+          <a href="http://www.avans.se" target="_blank" title="Avans">Avans</a>
+
+    </div>
+    <!--  <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div> -->
+  </div>
+
+
+  <!-- Pagination -->
+  <!--<div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="#">1</a>
+      <a class="w3-button w3-hover-black" href="#">2</a>
+      <a class="w3-button w3-hover-black" href="#">3</a>
+      <a class="w3-button w3-hover-black" href="#">4</a>
+  -->
+      <!--<a class="w3-button w3-hover-black" href="#">5</a>
+      <a class="w3-button w3-hover-black" href="#">»</a>-->
+  <!--
+    </div>
+  </div>
+-->
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <div> <h5>&copyJens Lundeqvist 2021</h5> </div>
+      <br>
+      <div><img style="display: inline" src="linkedinsmall.png" width="24" height="24" alt="LinkedIn"> <h5 style="display: inline"><a href="https://www.linkedin.com/in/jens-lundeqvist-347a8720/" target="_blank">LinkedIn-Jens Lundeqvist</a></h5> </div>
+      <br>
+      <div><img style="display: inline" src="giticonsmallTransp.png" width="25" height="25" alt="GitHub"> <h5 style="display: inline"><a href="https://github.com/jelu000" target="_blank">GitHub-Jens Lundeqvist</a></h5> </div>
 
     </div>
 
-    
-   
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
 </body>
 </html>
