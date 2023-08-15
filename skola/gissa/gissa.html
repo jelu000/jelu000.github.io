@@ -5,23 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="gissa.css">
 </head>
 <body>
     
-    <h2>Gissa Talet</h2>
+    
     <div class="center">
+        
+        <div>
+        <h2>Gissa Talet</h2>
         <b>Gissa ett tal 1 - 9! </b>
         <input type="text" id="gissa" size="1" tabindex="1">
         <button id="gissbutt" onclick="gissaTal()" class="gissatal" tabindex="2">Gissa</button>
+        </div>
+        
+        <div>
         <p id="p_svar"></p>
+        </div>
 
-
+        <button class="reload_butt" onclick="myRelode()">LaddOmSida</button>
     </div>
 
-    <div>
-        <button class="reload_butt" onclick="location.reload()">LaddOmSida</button>
+    
+    
 
-    </div>
+    
 
 
 
