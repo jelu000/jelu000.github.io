@@ -1,0 +1,20 @@
+body{
+    background-color: dodgerblue;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div{
+    margin: 6%
+}
+
+img{
+    width: 40%;
+    border-radius: 10%;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
