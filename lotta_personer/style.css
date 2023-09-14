@@ -1,8 +1,13 @@
+
 body{
     background-color: black;
     color: green;
     font-family: 'Arial Narrow', Arial, sans-serif
 
+}
+
+h2{
+    text-decoration: underline;
 }
 
 div.outer {
@@ -41,12 +46,19 @@ input {
     margin-bottom: 10px;
     margin-left: 20px;
 }
+.add_butt{
+    margin-left: 20px;
+}
 
 .svaret{
     background-color: black;
     width: auto;
+    margin-left: 20px;
 }
 
 .rensa_butt{
     margin-left: 20px;
+}
+hr{
+    border-color: green;
 }
