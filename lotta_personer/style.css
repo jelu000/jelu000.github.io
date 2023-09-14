@@ -5,6 +5,11 @@ body{
     font-family: 'Arial Narrow', Arial, sans-serif
 
 }
+button{
+    background-color: dimgray;
+    border-color: green;
+    
+}
 
 h2{
     text-decoration: underline;
