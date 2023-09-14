@@ -1,0 +1,44 @@
+body{
+    background-color: black;
+    color: green;
+    font-family: 'Arial Narrow', Arial, sans-serif
+
+}
+
+div.outer {
+    width: 80%;
+    padding: 10%;
+}
+
+.inner {
+    
+    
+    width: 400px;;
+    border-color: green;
+    width: 50%;
+    background-color: black;
+}
+
+.span_left {
+    
+    display: inline-block;
+    border: 2px;
+    
+    background-color: black;
+    
+    
+  
+    
+}
+
+.span_right {
+    display: inline-block;
+    background-color: black;
+    margin-left: 40px;
+    
+}
+
+input {
+    margin: 10px;
+}
+
