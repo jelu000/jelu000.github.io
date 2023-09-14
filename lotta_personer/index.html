@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Slumpa Namn</title>
     <link rel="stylesheet" href="style.css">
     <script src="lotta_person.js" defer></script>
 </head>
+
 <body>
 
-<div class="outer">
+    <div class="outer">
 
-    <div class="inner">
-        <h2>Lotta Person</h2>
-            
-        <span class="span_left">
-            <div>
-                <input id="tf_namn" type="text" width="20" maxlength="20" placeholder="Namn"><button id="add_butt">Lägg Till</button>
-            </div>
-        
-        </span>
-        
-        
-        <span class="span_right">
-            <div>
-                <h4 class="h4">Namn:</h4>
-            </div>
-        </span>
+        <div class="inner">
+            <h2>Slumpa Namn - Lotta Person</h2>
+
+            <span class="span_left">
+                <div id="div_span_left_top">
+                    <input id="tf_namn" type="text" width="20" maxlength="20" placeholder="Namn" tabindex="1">
+                    <button id="add_butt" tabindex="2">Add Namn</button>
+                    <button id="slump_butt" tabindex="3">Slumpa</button>
+
+                </div>
+
+                <div class="svaret">
+                    <p id="p_svar"></p>
+                </div>
+
+            </span>
+
+
+            <span class="span_right">
+                <div>
+                    <h4 class="h4">Namn:</h4>
+                    <ul id="namn_lista">
+                        
+
+                    </ul>
+
+                </div>
+            </span>
     
+        </div>
+        <button class="rensa_butt" onclick="rensaSidan()" tabindex="4">Rensa Sidan</button>
+
     </div>
-    
 
-</div>
-    
 </body>
+
 </html>
