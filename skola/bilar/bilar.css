@@ -1,0 +1,39 @@
+body{
+    background-color: black;
+    color: yellowgreen;
+    margin: 100px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.main{
+    
+
+}
+input{
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 10px;
+}
+
+.bil_div_element{
+    
+    
+
+    border: 2px;
+    border-style: dotted;
+    border-radius: 10px;
+    border-color: yellowgreen;
+    padding: 20px;
+    margin: 5px;
+}
+.listbilar_div{
+    display: flex;
+    
+
+}
+
+#addbutton{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
