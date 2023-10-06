@@ -1,34 +1,35 @@
-//https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git
-//$ git config --global core.editor "'C:/Program Files (x86)/sublime text 3/subl.exe' -w"
+//Så här kommeterar man bort kod i en javascript fil, dvs .js fil
 
-//https://phoenixnap.com/kb/how-to-vim-save-quit-exit
-
-//knapp fel https://codingbeautydev.com/blog/javascript-cannot-read-property-addeventlistener-of-null/
-
-let siffra = 0;
-//const siffra 0;
+let siffra = 0; //Deklarerar en variabel
+//const siffra 0; //Så deklarerar man en variabel som är konstant och inte kan ändras
 //var siffra = 0; Använd ej var för bryter utanför blocken men let och const!
 {
     var var_variabel = "block med var variabel som bryter utanför blocket";
     let let_variabel = "blocke med let variabel";    
 }
+
+//Function som körs när man trycker på plussknappen
 function plusClick(){
     
     siffra = siffra + 1;
-    console.log(`klick ${siffra}`);
+    //console.log(`klick ${siffra}`); //för felsökning
     document.getElementById("taltext").innerHTML = siffra;    
 }
 
+//Hämtar minusknapp element från html sidan 
+//OBS! gör man på detta sätt måste <script> taggen ligga längst ner i html sidan
+//eller måste man lägga till defer i taggen så här: <script src="knapp.js" defer>
 const minusknapp = document.getElementById("minus");
 minusknapp.addEventListener("click", minusClick);
 //console.log(`minusknapp type off= ${typeof(minusknapp)}`)
 
+//Function som körs när man trycker på minusknappen
 function minusClick(){
     siffra--;
-    console.log(`siffra= ${siffra}`);
+    //console.log(`siffra= ${siffra}`);//för felsökning
     document.getElementById("taltext").innerHTML = siffra;
 }
 
-console.log(`var_variabel = ${var_variabel}`);
-//console.log(`let_variabel = ${let_variabel}`);
+//console.log(`var_variabel = ${var_variabel}`);//för felsökning
+
 
