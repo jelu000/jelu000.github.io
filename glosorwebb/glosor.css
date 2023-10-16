@@ -1,6 +1,5 @@
 body {
-    margin: 0;
-    padding: 0;
+    
     font-family: Arial, sans-serif;
     /*background-color: linear-gradient(to bottom, #3498db, #1abc9c);
     animation: fadeBackground 8s infinite alternate;*/
@@ -9,11 +8,11 @@ body {
 
 .center_div {
     width: 400px;
-    height: 200px;
+    display: inline-block;
     background-color:navajowhite;
     border-radius: 10px;
     position: absolute;
-    top: 20%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     /*text-align: left;*/
@@ -37,11 +36,8 @@ input {
     
 }
 
-@keyframes fadeBackground {
-    0% {
-        background: linear-gradient(to bottom, #3498db, #1abc9c);
-    }
-    100% {
-        background: linear-gradient(to bottom, #1abc9c, #3498db);
-    }
+#glos_svar {
+    display: inline-block;
 }
+
+

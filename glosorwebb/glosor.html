@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,34 +9,45 @@
     <link rel="stylesheet" href="glosor.css">
     <script src="glosor.js" defer></script>
 </head>
+
 <body>
-    
+
     <div class="center_div">
 
         <h1>Glosor</h1>
-        
+
 
         <div id="add_glosor">
             <section id="add_glosa">
-                
-                
+
+
                 <input type="text" id="svensk_glosa" placeholder="Svensk Glosa" tabindex="1">
-                
+
                 <input type="text" id="engelsk_glosa" placeholder="Utlänsk Glosa" tabindex="2">
-                
+
                 <input type="button" id="add_button" value="Lägg till" tabindex="3">
-                
+
             </section>
             <hr>
             <section id="show_glosor">
 
             </section>
+            <br>
+            <button id="start_glostest">Starta glosförhör</button>
             <div>
 
             </div>
 
+
+
+        </div>
+
+        <div id="glos_test">
+            <br>
+            <b id="p_id_sweglosa">Hund</b><b>:</b><input id="glos_svar" type="text" width="10" maxlength="50">
         </div>
     </div>
 
 </body>
+
 </html>
