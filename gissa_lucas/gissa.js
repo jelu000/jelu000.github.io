@@ -3,10 +3,12 @@ let antalgissningar = 0
 
 
 
-slump = Math.random()
+//slump = Math.random()
+
+console.log(`slump = ${slumptal}`)
 
 function gissaTal() {
-    console.log(`slump = ${slumptal}`)
+    
     let textfelt_gissa = document.getElementById("gissa").value
     let gissa_int = Number(textfelt_gissa)
     let vinn = false

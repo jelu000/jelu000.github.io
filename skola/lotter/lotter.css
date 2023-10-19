@@ -1,0 +1,43 @@
+/* lotter.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: green;
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 24px;
+}
+
+b {
+    font-size: 18px;
+}
+
+input[type="text"] {
+    font-size: 16px;
+    padding: 5px;
+}
+
+button {
+    font-size: 16px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 2s;
+}
+
+button:hover {
+    background-color: #5abf5a;
+}
