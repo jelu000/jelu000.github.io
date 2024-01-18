@@ -87,7 +87,7 @@
         <br><br>
         <h1>Skattesats per kommun</h1>
         <h5 class="w3-padding-32">Här kan du söka i Skatteverkets skattetabell för kommunalskatt i filen
-          skattesatser-2019_2.csv för att till exempel räkna ut preliminär inkomstskatt.
+          Skattesatser_kommuner_2024_v3.csv för att till exempel räkna ut preliminär inkomstskatt.
           Skattesatsen används också för att räkna ut skatt på lön eftersom skattesatsen ligger till grund för vilken
           tabell som ska användas i löne skattetabellen.
         </h5>
@@ -105,6 +105,12 @@
           <a href="https://www.ekonomifakta.se/Fakta/Skatter/Skatt-pa-arbete/Kommunalskatter/" target="_blank"
             style="color: blue; "
             title="SkatteKarta">https://www.ekonomifakta.se/Fakta/Skatter/Skatt-pa-arbete/Kommunalskatter/</a>
+            <br>
+          Och här är API:et jag laddar cvs filen från:
+          <br>
+          <a href="https://www7.skatteverket.se/portal/apier-och-oppna-data/utvecklarportalen" target="_blank"
+          style="color: blue; "
+          title="SkatteKarta">API Skatteverket</a>
         </p>
         <!--<meta charset="iso-8859-1">-->
         <select name="optionkommuner" id="optionkommuner" onchange="selectedKommun()"></select>
@@ -140,7 +146,13 @@
           månadslön. Här kan du läsa mer om hur skatt månadslön fungerar:
           <a href="https://www.skatteverket.se/privat/skatter/arbeteochinkomst/sabeskattasdinlon.4.54a3d27615036ac09f316ce.html"
             target="_blank"
-            style="color: #0000FF; ">https://www.skatteverket.se/privat/skatter/arbeteochinkomst/sabeskattasdinlon.4.54a3d27615036ac09f316ce.html</a>
+            style="color: #0000FF; ">https://www.skatteverket.se/privat/skatter/arbeteochinkomst/sabeskattasdinlon.4.54a3d27615036ac09f316ce.html
+          </a>
+          <br>
+          Och här kan man se vad de olika kolumnerna står för:
+          <a href="https://skatteverket.se/privat/skatter/arbeteochinkomst/askattsedelochskattetabeller/salaserdutabellen.4.319dc1451507f2f99e875f.html" target="_blank" rel="noopener" noreferrer style="color: #0000FF;">
+          Skatteverket lönetabeller och kolumner
+          </a>
 
         </p>
         <!--<meta charset="iso-8859-1">-->
