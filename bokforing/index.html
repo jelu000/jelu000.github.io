@@ -33,6 +33,9 @@
     .fa-coffee {
       font-size: 200px
     }
+    h1{
+      padding-top: 60px;
+    }
   </style>
 
 
@@ -84,7 +87,7 @@
       <!--skattekommun-->
       <div class="w3-twothird" id="skatterkommun">
 
-        <br><br>
+        
         <h1>Skattesats per kommun</h1>
         <h5 class="w3-padding-32">Här kan du söka i Skatteverkets skattetabell för kommunalskatt i filen
           Skattesatser_kommuner_2024_v3.csv för att till exempel räkna ut preliminär inkomstskatt.
@@ -93,15 +96,15 @@
         </h5>
 
         <p>
-          Exempel för att ta reda på vilken skatt som ska debiteras på lönen med 32,54% i kommunalskattetabellen (flik
-          1) avrundas då till tabell 33 i löneskattetabellen (flik 2). I kommunalskatten ingår pengar till landsting
-          och
+          Exempel för att ta reda på vilken skatt som ska debiteras på lönen med 32,54% i kommunalskattetabellen avrundas 
+          då till tabell 33 i löneskattetabellen. I kommunalskatten ingår pengar till landsting och
           kommunen, men även kyrkoskatt om man valt att vara medlem i kyrkan.
           Därför blir skatten mindre om man valt att inte vara med i kyrkan.
         </p>
 
         <p>
           Här finns en översiktskarta med de olika skatterna i Sverige:
+          <br>
           <a href="https://www.ekonomifakta.se/Fakta/Skatter/Skatt-pa-arbete/Kommunalskatter/" target="_blank"
             style="color: blue; "
             title="SkatteKarta">https://www.ekonomifakta.se/Fakta/Skatter/Skatt-pa-arbete/Kommunalskatter/</a>
@@ -120,40 +123,37 @@
         <div class="KomSkattutmatning" id="KomSkattutmatning">
 
         </div>
-
-
       </div>
+
       <!--Slut på skattekommun-->
       <!--löneskatte tabell-->
       <div class="w3-twothird" id="skattetabell">
-        <br><br>
+        
         <h1>Skattetabell månadslön</h1>
         <h5 class="w3-padding-32">
           På denna sida kan du söka skattetabell baserat på månadslön.
-          Jag har valt att bara ta med kolumnerna för skatt på lön ersättning för löntagare under 65 samt för löntagare
-          från och med 65 år.
-          Skatteabellerna innehåller också kolumner för personer med ersättning för sjukdom samt olika ersättningar för
-          pensioner men är inte presenterat på denna sida.
+          För använda tabellen på rätt sätt måsta man veta vilket intervall bruttolönen är och sökar rätt på den.
+          Sen för att se vilken skatt man ska dra av på bruttolönen måste man veta vilke kolumn som ska användas för den inkomst man haft.
+          Här finns information om de olika kolumnerna:
+          <br>
+          <a href="https://skatteverket.se/privat/skatter/arbeteochinkomst/askattsedelochskattetabeller/salaserdutabellen.4.319dc1451507f2f99e875f.html" target="_blank" rel="noopener" noreferrer style="color: #0000FF;">
+            Skatteverket lönetabeller och kolumner
+          </a>
+  
 
         </h5>
 
         <p>
           Man väljer först vilket tabellnummer man tillhör vilket man får från skattesatser för kommun som finns på
-          (flik 1).
-          Där söker man på sin kommun och avrundar skatteprocenten till ett heltal som blir tabellnumret man använder på
-          denna sida.
-          Sen ser man i vilket intervall lönen ligger i och på samma rad ser man den skatt som ska betalas på en
-          månadslön. Här kan du läsa mer om hur skatt månadslön fungerar:
+          här ovan i skattetabell för Skattesats per kommun.
+          Där söker man på sin kommun och avrundar skatteprocenten till ett heltal som blir tabellnumret man sen använder
+          här för att välja rät lönetabell. Här kan du läsa mer om hur skatt månadslön fungerar:
+          <br>
           <a href="https://www.skatteverket.se/privat/skatter/arbeteochinkomst/sabeskattasdinlon.4.54a3d27615036ac09f316ce.html"
             target="_blank"
             style="color: #0000FF; ">https://www.skatteverket.se/privat/skatter/arbeteochinkomst/sabeskattasdinlon.4.54a3d27615036ac09f316ce.html
           </a>
-          <br>
-          Och här kan man se vad de olika kolumnerna står för:
-          <a href="https://skatteverket.se/privat/skatter/arbeteochinkomst/askattsedelochskattetabeller/salaserdutabellen.4.319dc1451507f2f99e875f.html" target="_blank" rel="noopener" noreferrer style="color: #0000FF;">
-          Skatteverket lönetabeller och kolumner
-          </a>
-
+          
         </p>
         <!--<meta charset="iso-8859-1">-->
         <select name="optionsalarytax" id="optionsalarytax" onchange="selectSalaryTaxNr(false)"></select>
@@ -163,11 +163,10 @@
         <div class="divSallaryButton" id="divSallaryButton">
           Mata in inkomst/månadslön:
           <input type="number" class="loninmatning_inputs" id="thesalary">
-          <input type="button" name="salarybutt" value="Hitta rad" class="salarybutt" id="salarybutt"
-            onfocus="selectSalaryTaxNr(true)">
+          <input type="button" name="salarybutt" value="Hitta rad" class="salarybutt" id="salarybutt" onclick="selectSalaryTaxNr(true)">
 
         </div>
-        <br>
+        
         <div class="salaryTaxutmatning" id="salaryTaxutmatning">
 
         </div>
@@ -176,7 +175,7 @@
       <!--Slut på löneskatte tabell-->
       <!--Löneutbetalning-->
       <div class="w3-twothird" id="loneutbet">
-        <br><br>
+        
         <h1>Löneutbetalning</h1>
         <h5 class="w3-padding-32">
           Denna sida visar ett exempel på hur man bokför en lön med arbetsgivaravgift.
@@ -239,7 +238,7 @@
       <!--Slut på löneutbetalning-->
       <!--Länkar  -->
       <div class="w3-twothird" id="lankar">
-        <br><br>
+        
         <h1>Länkar</h1>
 
 
