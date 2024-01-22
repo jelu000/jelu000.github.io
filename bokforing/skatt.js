@@ -385,33 +385,30 @@ function clearSkattetabell(){
 //BokföraLön
 //--------------
 function salAccounting() {
-  var t_salary = Number(document.getElementById("income").value);
-  var t_socavg = Number(document.getElementById("socialaavg").value);
-  var t_tabellNr = document.getElementById("optionaccounting");
 
-  var t_tabelNr_value = t_tabellNr.options[t_tabellNr.selectedIndex].value;
-  var t_boolSixtieFive = document.getElementById("sixtieFive").checked;
+  let select_kolumn_val = document.getElementById("lonekolumn")
 
-  var t_skatterad = new Array();
+  let t_salary = Number(document.getElementById("income").value);
+  let t_socavg = Number(document.getElementById("socialaavg").value);
+  let t_tabellNr = document.getElementById("optionaccounting");
+
+  let t_tabelNr_value = t_tabellNr.options[t_tabellNr.selectedIndex].value;
+  //let t_boolSixtieFive = document.getElementById("sixtieFive").checked;
+
+  let t_skatterad = new Array();
   t_skatterad = getTaxRow(t_salary, t_tabelNr_value);
 
-  var t_skattunder65 = parseInt(t_skatterad[5]);
-  var t_skatt65 = parseInt(t_skatterad[7]);
+  console.log(`rad= ${t_skatterad} och selected kolumn ${select_kolumn_val.value}`)
 
-  if (!t_boolSixtieFive) {
-    printKalkyl(t_salary, t_socavg, t_skattunder65);
-  }
-  else {
-    printKalkyl(t_salary, t_socavg, t_skatt65);
-  }
-  //console.log(t_salary +" "+ t_socavg +" "+ t_tabelNr_value +" "+ t_boolSixtieFive +" "+ t_skattunder65 +" "+ t_skatt65);
-  //console.log(t_row);
-
-}//end of salAccounting
+  let t_skatteunderlaget = parseInt(t_skatterad[Number(select_kolumn_val.value)])
+  
+  printKalkyl(t_salary, t_socavg, t_skatteunderlaget);
+  
+}//end of salAccounting---------------------------------------
 
 function getTaxRow(t_salary, t_table_nr) {
 
-  var t_row_taxtable = new Array();
+  //var t_row_taxtable = new Array();
 
   for (var i = 0; i < salaryTaxArray.length; i++) {
 

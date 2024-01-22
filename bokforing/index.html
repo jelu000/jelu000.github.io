@@ -36,6 +36,17 @@
     h1{
       padding-top: 60px;
     }
+    select{
+      margin: 10px;
+    }
+    button{
+      margin-left: 0px;
+    }
+    #skattutrakning{
+      margin: 10 px;
+      padding-bottom: 30px;
+    }
+    
   </style>
 
 
@@ -220,10 +231,21 @@
           Skattetabell: <select class="loninmatning_inputs" tabindex="3" name="optionaccounting" id="optionaccounting"
             onchange="selectSalaryTaxNr(false)"></select>
           <br>
-          Fyllt 65 år: <input tabindex="4" type="checkbox" class="sixtieFive" id="sixtieFive">
-          <br><br>
-          <input tabindex="5" type="submit" name="Bokför" value="Bokför" onclick="salAccounting()">
+          
+          
+          <select name="select_kolumn" id="lonekolumn">
+            <option value="" disabled selected>Välj Kolumn</option>
+            <!--value = kolomn i rad Arrayen-->
+            <option value="5">1 - Fyllt 66år årets ingång / Lön, arvode</option>
+            <option value="6">2 - Fyllt 66år årets ingång / Andra ersättningar</option>
+            <option value="7">3 - Fyllt 66år årets ingång / Lön, arvode förhöjt skatteavdrag</option>
+            <option value="8">4 - Avser sjuk- och aktivitetsersättning som betalats ut till den som vid årets ingång inte fyllt 66 år.</option>
+            <option value="9">5 - Andra pensionsgrundande ersättningar ej lön, ex a-kassa, egen arbetsskadelivränta, född 1938 och senare</option>
+            <option value="10">6 - Avser pensioner och andra ersättningar till den som vid årets ingång inte fyllt 66 år,</option>
+          </select>
 
+        
+          <button name="butt_bokfor" id="butt_bokfor" onclick="salAccounting()">Bokför</button>
 
         </div>
 
