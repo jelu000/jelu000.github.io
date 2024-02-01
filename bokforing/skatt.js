@@ -511,6 +511,8 @@ function printVerifikation(t_verifikation_array) {
 
 function printKalkyl(t_salary, t_arbetgivaravift, t_salaryskatt) {
 
+  //console.log(`SocialAvg = ${t_arbetgivaravift}`)
+
   t_arbetgivaravift = t_arbetgivaravift / 100;//procent
   var t_div_kalkyl = document.getElementById("skattutrakning");
   var t_arbetgivaravift_kr = t_salary * t_arbetgivaravift;

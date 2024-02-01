@@ -46,6 +46,9 @@
       margin: 10 px;
       padding-bottom: 30px;
     }
+    a{
+      color: #0000FF;
+    }
     
   </style>
 
@@ -213,12 +216,18 @@
         </ol>
 
         <p>
-          Arbetsgivaravgiften är blandannat för pension och sjukförsäkring och kan variera beroende på flera saker.
-          Det kan vara att det finns tilläggsförsäkringar i anställningsavtalet.
+          Arbetsgivaravgiften eller sociala-avgifter är bland annat för pension och sjukvård och består av en lagstadgad del och vissa 
+          arbetsgivare kan ha tillägsförsäkringar i anställningsavtalet.
+          
           Olika avdrag för arbetsgivaravgiften kan förekomma så som verksamheter inom stödområde eller att den anställde
-          är yngre än 18 år.
-          Det finns även andra avdrag, information om dessa finns på Skatteverkets webbsida.
-
+          är yngre än 18 år eller är äldre än 66 år.
+          
+        </p>
+        <p>
+          Information om de olika lagstadgade arbetsgivaravgiftaren finns på 
+            <a href="https://www.skatteverket.se/foretag/arbetsgivare/arbetsgivaravgifterochskatteavdrag/arbetsgivaravgifter.4.233f91f71260075abe8800020817.html" target="_blank" rel="noopener noreferrer">
+            Skatteverkets webbsida.
+          </a>
         </p>
 
         <div class="loninmatning" id="loninmatning">
@@ -236,7 +245,7 @@
           <select name="select_kolumn" id="lonekolumn">
             <option value="" disabled selected>Välj Kolumn</option>
             <!--value = kolomn i rad Arrayen-->
-            <option value="5">1 - Fyllt 66år årets ingång / Lön, arvode</option>
+            <option value="5">1 - Inte fyllt 66år årets ingång / Lön, arvode</option>
             <option value="6">2 - Fyllt 66år årets ingång / Andra ersättningar</option>
             <option value="7">3 - Fyllt 66år årets ingång / Lön, arvode förhöjt skatteavdrag</option>
             <option value="8">4 - Avser sjuk- och aktivitetsersättning som betalats ut till den som vid årets ingång inte fyllt 66 år.</option>
