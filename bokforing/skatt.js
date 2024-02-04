@@ -115,9 +115,9 @@ function createHtmlTable(t_array_table, t_divTableName) {
 
 }//end of function createHtmlKommunTable()
 
-//-----------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------
 //KommunalSkatt
-//--------------
+//--------------------------------------------------------------------------------------------------------------------------
 function makeKomTaxArray(tdata) {
   //console.log("längd: " + tdata.length)
   for (var i = 0; i < tdata.length; i++) {//tdata.length 1346
@@ -208,9 +208,9 @@ function selectedKommun() {
 
 }//end selectedkommun()
 
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------------------
 //MånadsLön
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------------------
 function makeSalaryTaxArray(tdata) {
 
   var t_tablenr = "";
@@ -381,9 +381,9 @@ function clearSkattetabell(){
 
 
 
-//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
 //BokföraLön
-//--------------
+//-----------------------------------------------------------------------------------------------------------------
 function salAccounting() {
 
   let select_kolumn_val = document.getElementById("lonekolumn")
@@ -408,28 +408,27 @@ function salAccounting() {
 
 function getTaxRow(t_salary, t_table_nr) {
 
-  //var t_row_taxtable = new Array();
+  let t_row = new Array();
 
-  for (var i = 0; i < salaryTaxArray.length; i++) {
+  for (let i = 0; i < salaryTaxArray.length; i++) {
 
-    var t_row = new Array();
-    t_row = salaryTaxArray[i]; //s
-    var t_salto = parseInt(t_row[4]);// inkomst från och med
-
+    t_row = salaryTaxArray[i]; //hämtar rad i lönetabell
+    let t_salto = parseInt(t_row[4]);// inkomst från och med
+    //Om imkomst från och med är mindre än inmatat lön och Kolumn nr är lika som vald kolumn 
     if (t_salary <= t_salto && t_row[2] == t_table_nr) {
       break;
     }//end if
 
   }// end forloop
 
-  console.log(t_row);
+  //console.log(t_row);
   return t_row;
 }// end of getTaxRow()
 
 function createVerifikationArray(t_salary, t_arbetgivaravift, t_salaryskatt, t_nettolon) {
-  var t_ver_array = new Array();
+  let t_ver_array = new Array();
 
-  var t_ver_row = ["Konto", "Kontonamn - Benämning", "Debet", "Kredit"];
+  let t_ver_row = ["Konto", "Kontonamn - Benämning", "Debet", "Kredit"];
   t_ver_array.push(t_ver_row);
   t_ver_row = ["1930", "Företagskonto", "0", t_nettolon];
   t_ver_array.push(t_ver_row);
@@ -447,20 +446,17 @@ function createVerifikationArray(t_salary, t_arbetgivaravift, t_salaryskatt, t_n
 
 }//end of createVerifikationArray
 
+//printVerifikation()//skriver html tabell som verifikation
 function printVerifikation(t_verifikation_array) {
 
-
-
-  var t_div_ver = document.getElementById("bokforutmatning");
+  let t_div_ver = document.getElementById("bokforutmatning");
   t_div_ver.innerHTML = "";
 
+  let t_heading = t_verifikation_array[0];
 
-  var t_heading = t_verifikation_array[0];
-
-
-  var table = document.createElement('TABLE')
-  var tableJhaed = document.createElement('THEAD')
-  var tableBody = document.createElement('TBODY')
+  let table = document.createElement('TABLE')
+  let tableJhaed = document.createElement('THEAD')
+  let tableBody = document.createElement('TBODY')
 
   //TABLE COLUMNS
   table.border = '1';
