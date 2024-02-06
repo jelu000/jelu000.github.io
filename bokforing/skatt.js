@@ -447,7 +447,7 @@ function createVerifikationArray(t_salary, t_arbetgivaravift, t_salaryskatt, t_n
 }//end of createVerifikationArray
 
 //printVerifikation()//skriver html tabell som verifikation
-function printVerifikation(t_verifikation_array) {
+function printVerifikationOld(t_verifikation_array) {
 
   let t_div_ver = document.getElementById("bokforutmatning");
   t_div_ver.innerHTML = "";
@@ -505,6 +505,63 @@ function printVerifikation(t_verifikation_array) {
 
 }//end of printVerifikation
 
+
+function printVerifikation(t_verifikation_array) {
+  
+  let t_div_ver = document.getElementById("bokforutmatning");
+  t_div_ver.innerHTML = "";
+
+  let t_heading = t_verifikation_array[0];
+
+  let table = document.createElement('TABLE')
+  let tableJhaed = document.createElement('THEAD')
+  let tableBody = document.createElement('TBODY')
+
+  table.id = "verifikation_table"
+  table.appendChild(tableJhaed);
+  let tr_head = document.createElement('TR');
+  tableJhaed.appendChild(tr_head);
+
+  for (i = 0; i < t_heading.length; i++) {
+
+    let th = document.createElement('TH')
+    th.id =  `ver_tableheader_id_${i}`  
+    th.appendChild(document.createTextNode(t_heading[i]));
+    tr_head.appendChild(th);
+  }
+
+
+  table.appendChild(tableBody);
+  //TABLE ROWS
+
+  for (i = 1; i < t_verifikation_array.length; i++) {
+    let tr_body = document.createElement('TR');
+    tableBody.appendChild(tr_body);
+
+    //console.log(i +": ");
+    for (j = 0; j < t_verifikation_array[i].length; j++) {
+      //console.log(t_verifikation_array[i][j]);
+      let td_body = document.createElement('TD')
+      td_body.id = `table_body_td_name${j}`
+
+      
+
+      td_body.appendChild(document.createTextNode(t_verifikation_array[i][j]));
+      tr_body.appendChild(td_body);
+    }//end of inner forloop
+    //table.appendChild(tr);
+  }//end of outer forloop
+
+  t_div_ver.appendChild(table);
+
+
+
+  console.log(`t_heading: ${t_heading}`)
+
+
+
+}
+
 function printKalkyl(t_salary, t_arbetgivaravift, t_salaryskatt) {
 
   //console.log(`SocialAvg = ${t_arbetgivaravift}`)
@@ -524,6 +581,8 @@ function printKalkyl(t_salary, t_arbetgivaravift, t_salaryskatt) {
   t_div_kalkyl.innerHTML = t_text1 + t_text2;
 
   //Skriver ut Verifikation
+  //printVerifikation(createVerifikationArray(t_salary, t_arbetgivaravift_kr, t_salaryskatt, t_nettolon));
+
   printVerifikation(createVerifikationArray(t_salary, t_arbetgivaravift_kr, t_salaryskatt, t_nettolon));
 
 }//end of printKalkyl
