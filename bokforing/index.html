@@ -125,7 +125,7 @@
 
   <!-- Header -->
   <header class="w3-container w3-red w3-center" style="padding:60px 28px">
-    <h1 class="w3-margin w3-jumbo">Skatt på lön</h1>
+    <h1 class="w3-margin w3-jumbo">Bokföra lön</h1>
 
   </header>
 
@@ -165,6 +165,7 @@
         </p>
         <!--<meta charset="iso-8859-1">-->
         <select name="optionkommuner" id="optionkommuner" onchange="selectedKommun()"></select>
+        <button onclick="clearKomuntabell()">Rensa Kommuntabell </button>
 
         <br>
         <br>
@@ -205,8 +206,7 @@
         </p>
         <!--<meta charset="iso-8859-1">-->
         <select name="optionsalarytax" id="optionsalarytax" onchange="selectSalaryTaxNr(false)"></select>
-        <input type="button" name="clearSkattetabell" value="rensa skattetabell" class="salarybutt"
-          id="clearSkattetabellButt" onclick="clearSkattetabell()">
+        <button onclick="clearSkattetabell()">Rensa Löneskattetabell</button>
         <br><br>
         <div class="divSallaryButton" id="divSallaryButton">
           Mata in inkomst/månadslön:
@@ -266,7 +266,7 @@
 
         <div class="loninmatning" id="loninmatning">
 
-          Bruttolön: <input class="loninmatning_inputs" tabindex="1" type="number" name="income" id="income">
+          Bruttolön: <input class="loninmatning_inputs" tabindex="1" type="number" name="income" id="income" value="0">
           <br>
           Arbetsgivaravgift i %: <input class="loninmatning_inputs" tabindex="2" type="number" name="socialaavg"
             value="31.42" id="socialaavg">

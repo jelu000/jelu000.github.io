@@ -3,13 +3,13 @@
 //KommunalaSkattesatser
 //var data = new Array();
 //KommunSkatt
-var komSkattArray = new Array(); //2D array med all data kummunalskatt
-var kommun_array = new Array();//array med bara kommuner kommunalskatt
-var global_kommun = "";
+let komSkattArray = new Array(); //2D array med all data kummunalskatt
+let kommun_array = new Array();//array med bara kommuner kommunalskatt
+let global_kommun = "";
 
 //Lönesaktt - Sallary Taxes
-var salaryTaxArray = new Array();
-var salaryTaxArrayTabellNr = [];
+let salaryTaxArray = new Array();
+let salaryTaxArrayTabellNr = [];
 
 
 function tMain() {
@@ -31,7 +31,7 @@ function tMain() {
 //ISO-8859-1 - iso-8859-1
 function getDatan(tfunc, t_url) {
 
-  var data = new Array();
+  let data = new Array();
   //console.log("getDatan");
   $.ajax({
     type: "GET",
@@ -59,16 +59,16 @@ function getDatan(tfunc, t_url) {
 //skriver ut htmltable med selected kommun dataset
 function createHtmlTable(t_array_table, t_divTableName) {
 
-  var myTableDiv = document.getElementById(t_divTableName);
-  var t_tableheadings = new Array();
+  let myTableDiv = document.getElementById(t_divTableName);
+  let t_tableheadings = new Array();
   t_tableheadings = t_array_table[0];
 
 
   try {
 
-    var table = document.createElement('TABLE')
-    var tableJhaed = document.createElement('THEAD')
-    var tableBody = document.createElement('TBODY')
+    let table = document.createElement('TABLE')
+    let tableJhaed = document.createElement('THEAD')
+    let tableBody = document.createElement('TBODY')
 
     //TABLE COLUMNS
     table.border = '1';
@@ -80,7 +80,7 @@ function createHtmlTable(t_array_table, t_divTableName) {
     tableJhaed.appendChild(tr);
 
     for (i = 0; i < t_tableheadings.length; i++) {
-      var th = document.createElement('TH')
+      let th = document.createElement('TH')
 
       th.appendChild(document.createTextNode(t_tableheadings[i]));
       tr.appendChild(th);
@@ -90,13 +90,13 @@ function createHtmlTable(t_array_table, t_divTableName) {
     //TABLE ROWS
 
     for (i = 1; i < t_array_table.length; i++) {
-      var tr = document.createElement('TR');
+      let tr = document.createElement('TR');
       tableBody.appendChild(tr);
 
       //console.log(i +": ");
       for (j = 0; j < t_array_table[i].length; j++) {
 
-        var td = document.createElement('TD')
+        let td = document.createElement('TD')
 
         if (j == 1)
           td.align = 'left';
@@ -120,13 +120,13 @@ function createHtmlTable(t_array_table, t_divTableName) {
 //--------------------------------------------------------------------------------------------------------------------------
 function makeKomTaxArray(tdata) {
   //console.log("längd: " + tdata.length)
-  for (var i = 0; i < tdata.length; i++) {//tdata.length 1346
+  for (let i = 0; i < tdata.length; i++) {//tdata.length 1346
     //console.log(tdata[5]);
 
     //castar raden till String
-    var trow = String(tdata[i]);
+    let trow = String(tdata[i]);
     //splitar Stringen till array[År;Församlings-kod;Kommun;Församling;Summa, inkl. kyrkoavgift;Summa, exkl. kyrkoavgift;Kommunal-skatt;Landstings-skatt;Begravnings-av]
-    var telement = trow.split(";");
+    let telement = trow.split(";");
     //console.log(telement[2]);
     //skapar en array med bara Kommun
     if (global_kommun != telement[2]) {
@@ -154,9 +154,9 @@ function fillOptionkomuner() {
   option.disabled = "disabled";
   tselect.appendChild(option);
 
-  for (var i = 0; i < kommun_array.length; i++) {
+  for (let i = 0; i < kommun_array.length; i++) {
     option = document.createElement("option");
-    var tkomun = kommun_array[i];
+    let tkomun = kommun_array[i];
     option.value = tkomun;
     option.innerHTML = decodeURIComponent(unescape(tkomun));//unescape(encodeURIComponent(tkomun)); decodeURIComponent(escape(tkomun));
     tselect.appendChild(option);
@@ -167,15 +167,15 @@ function fillOptionkomuner() {
 //skriverut skattestsen för vald kommun i selected elementet
 function selectedKommun() {
   //div id i html-kod
-  var div_html_id = "KomSkattutmatning";
+  let div_html_id = "KomSkattutmatning";
   //Tömmer Div ellement från gammal visning
   document.getElementById(div_html_id).innerHTML = "";
 
-  var t_valdkommun_array = new Array();//rader med data för vald kommun
-  var tselectedkommun = document.getElementById("optionkommuner");//.selectedValue;
+  let t_valdkommun_array = new Array();//rader med data för vald kommun
+  let tselectedkommun = document.getElementById("optionkommuner");//.selectedValue;
 
   //lägger till headings till html table
-  var t_heading = new Array();
+  let t_heading = new Array();
   t_heading[0] = "År";
   t_heading[1] = "Församlings-\nKod";
   t_heading[2] = "Kommun\n";
@@ -192,10 +192,10 @@ function selectedKommun() {
   //if (tselectedkommun.selectedIndex == -1)
   //    return null;
 
-  var tkommun_value = tselectedkommun.options[tselectedkommun.selectedIndex].value;
+  let tkommun_value = tselectedkommun.options[tselectedkommun.selectedIndex].value;
 
-  for (var i = 0; i < komSkattArray.length; i++) {
-    var t_row = komSkattArray[i];
+  for (let i = 0; i < komSkattArray.length; i++) {
+    let t_row = komSkattArray[i];
 
     if (tkommun_value == t_row[2]) {
       //console.log(t_row[2]);
@@ -208,36 +208,44 @@ function selectedKommun() {
 
 }//end selectedkommun()
 
+function clearKomuntabell() {
+  //console.log("Clear skatteTabell! ")
+  let div_komuntabellutmatning = document.getElementById("KomSkattutmatning");
+  div_komuntabellutmatning.innerHTML = "";
+}//end  of clearKommutabell()-------------------------------------------------------------------------
+
+
+
 //------------------------------------------------------------------------------------------------------------------------------------------
 //MånadsLön
 //------------------------------------------------------------------------------------------------------------------------------------------
 function makeSalaryTaxArray(tdata) {
 
-  var t_tablenr = "";
+  let t_tablenr = "";
 
   //Fill select option sid 3 Bokföring ++++++++++++++++++++++++++++++++
-  var tselectaccounting = document.getElementById("optionaccounting"); //fyller select på sidan 3 bokföra
+  let tselectaccounting = document.getElementById("optionaccounting"); //fyller select på sidan 3 bokföra
 
   //Fill select option sid 2 Löneskattetabell ++++++++++++++++++++++++++++++++
-  var tselect = document.getElementById("optionsalarytax");
-  var option = document.createElement("option");
+  let tselect = document.getElementById("optionsalarytax");
+  let option = document.createElement("option");
   //option.value = "Välj skattetabell";
   option.innerHTML = "Välj skattetabell";
   option.selected = "true";
   option.disabled = "disabled";
   tselect.appendChild(option);
   //tselectaccounting.appendChild(option);
-  console.log(tdata);
+  //console.log(tdata);
 
-  for (var i = 1; i < tdata.length; i++) {//tdata.length 1346
+  for (let i = 1; i < tdata.length; i++) {//tdata.length 1346
 
     //castar raden till String
-    var trow = String(tdata[i]);
+    let trow = String(tdata[i]);
     //splitar Stringen till array[År;Församlings-kod;Kommun;Församling;Summa, inkl. kyrkoavgift;Summa, exkl. kyrkoavgift;Kommunal-skatt;Landstings-skatt;Begravnings-av]
     //var telement = trow.split(",");
     let telement = trow.split(";");
 
-    console.log(telement[2]);
+    //console.log(telement[2]);
     //skapar en array med bara tabell nummer
     if (t_tablenr != telement[2] && telement[2] != "3") {
       salaryTaxArrayTabellNr.push(telement[2]);//lägger till tabell nummer
@@ -249,7 +257,7 @@ function makeSalaryTaxArray(tdata) {
       tselect.appendChild(option);
       //++++++++++++++++++++++++++++++++++++
       //Fill select option sid 3 Bokföring ++++++++++++++++++++++++++++++++
-      var option2 = document.createElement("option");
+      let option2 = document.createElement("option");
       option2.value = telement[2];
       option2.innerHTML = telement[2];
       tselectaccounting.appendChild(option2);//fyller select på sidan 3 bokföra
@@ -279,7 +287,7 @@ function selectSalaryTaxNr(t_findrow) {
 
   //lägger till headings till html table
   let t_heading = new Array();
-  
+
   t_heading[0] = "År\n";//0
   t_heading[1] = "Antal\nDagar";//1
   t_heading[2] = "Tabell\nNr";
@@ -303,7 +311,7 @@ function selectSalaryTaxNr(t_findrow) {
 
     if (t_tabnr_value == t_row[2] && t_findrow == false) {// om flera rader för vald tabellnr ska visas
       //console.log(t_row);
-      
+
       t_newrowarray[0] = t_row[0];//år
       t_newrowarray[1] = t_row[1];//AntDgr
       t_newrowarray[2] = t_row[2];// TabNr
@@ -333,7 +341,7 @@ function selectSalaryTaxNr(t_findrow) {
 
       if (t_inputsalary <= t_salto) {
         let t_rowBefore = salaryTaxArray[i]
-       
+
         t_newrowarray[0] = t_rowBefore[0];//år
         t_newrowarray[1] = t_rowBefore[1];//AntDgr
         t_newrowarray[2] = t_rowBefore[2];// TabNr
@@ -345,7 +353,7 @@ function selectSalaryTaxNr(t_findrow) {
         t_newrowarray[8] = t_rowBefore[8];// sjuk- och aktivitetsersättning, årets ingång inte fyllt 66 år Kolumn4
         t_newrowarray[9] = t_rowBefore[9];//pensionsgrundande ersättningar än löner med mera, exempelvis ersättning från arbetslöshetskassa  Kolumn5
         t_newrowarray[10] = t_rowBefore[10];// Avser pensioner och andra ersättningar till den som vid årets ingång inte fyllt 66  Kolumn6
-  
+
         t_valdsalarynr_array.push(t_newrowarray);
         //G_valdSallaryTaxRow = t_newrowarray;//
         break;
@@ -373,7 +381,7 @@ function showSallaryButton(t_status) {
   }
 }// end of showSallaryButton()-------------------------------------------------------------------------------------------------
 
-function clearSkattetabell(){
+function clearSkattetabell() {
   //console.log("Clear skatteTabell! ")
   let div_salaryTaxutmatning = document.getElementById("salaryTaxutmatning");
   div_salaryTaxutmatning.innerHTML = "";
@@ -389,21 +397,30 @@ function salAccounting() {
   let select_kolumn_val = document.getElementById("lonekolumn")
 
   let t_salary = Number(document.getElementById("income").value);
-  let t_socavg = Number(document.getElementById("socialaavg").value);
+    
+  let select_socavg =  document.getElementById("socialaavg")
+  let t_socavg = Number(select_socavg.value);
+  
+  /*select_socavg.addEventListener('click', (event) => {
+    console.log(`You like ${event.target.value}`);
+  } )*/
+
+  //let t_socavg = Number(document.getElementById("socialaavg").value);
   let t_tabellNr = document.getElementById("optionaccounting");
 
+  
   let t_tabelNr_value = t_tabellNr.options[t_tabellNr.selectedIndex].value;
   //let t_boolSixtieFive = document.getElementById("sixtieFive").checked;
 
   let t_skatterad = new Array();
   t_skatterad = getTaxRow(t_salary, t_tabelNr_value);
 
-  console.log(`rad= ${t_skatterad} och selected kolumn ${select_kolumn_val.value}`)
+  //console.log(`rad= ${t_skatterad} och selected kolumn ${select_kolumn_val.value}`)
 
   let t_skatteunderlaget = parseInt(t_skatterad[Number(select_kolumn_val.value)])
-  
+
   printKalkyl(t_salary, t_socavg, t_skatteunderlaget);
-  
+
 }//end of salAccounting---------------------------------------
 
 function getTaxRow(t_salary, t_table_nr) {
@@ -425,9 +442,9 @@ function getTaxRow(t_salary, t_table_nr) {
   return t_row;
 }// end of getTaxRow()
 
-function createVerifikationArray(t_salary, t_arbetgivaravift, t_salaryskatt, t_nettolon) {
+function createVerifikationArray(t_salary, t_arbetgivaravift, t_salaryskatt, t_nettolon, bool_konto7510) {
   let t_ver_array = new Array();
-
+  //console.log(`Social avgift= ${t_arbetgivaravift}`)
   let t_ver_row = ["Konto", "Kontonamn - Benämning", "Debet", "Kredit"];
   t_ver_array.push(t_ver_row);
   t_ver_row = ["1930", "Företagskonto", "0", t_nettolon];
@@ -438,9 +455,12 @@ function createVerifikationArray(t_salary, t_arbetgivaravift, t_salaryskatt, t_n
   t_ver_array.push(t_ver_row);
   t_ver_row = ["7010", "Lön kollektivanställda", t_salary, "0"];
   t_ver_array.push(t_ver_row);
-  t_ver_row = ["7510", "Arbetsgivaravgift 31.42%", t_arbetgivaravift, "0"];
+  if (bool_konto7510)
+    t_ver_row = ["7510", "Arbetsgivaravgift 31.42%", t_arbetgivaravift, "0"];    
+  else
+    t_ver_row = ["7511", "Arbetsgivaravgift lön-ersättning", t_arbetgivaravift, "0"];
+    
   t_ver_array.push(t_ver_row);
-
 
   return t_ver_array;
 
@@ -507,7 +527,7 @@ function printVerifikationOld(t_verifikation_array) {
 
 
 function printVerifikation(t_verifikation_array) {
-  
+
   let t_div_ver = document.getElementById("bokforutmatning");
   t_div_ver.innerHTML = "";
 
@@ -525,7 +545,7 @@ function printVerifikation(t_verifikation_array) {
   for (i = 0; i < t_heading.length; i++) {
 
     let th = document.createElement('TH')
-    th.id =  `ver_tableheader_id_${i}`  
+    th.id = `ver_tableheader_id_${i}`
     th.appendChild(document.createTextNode(t_heading[i]));
     tr_head.appendChild(th);
   }
@@ -544,7 +564,7 @@ function printVerifikation(t_verifikation_array) {
       let td_body = document.createElement('TD')
       td_body.id = `table_body_td_name${j}`
 
-      
+
 
       td_body.appendChild(document.createTextNode(t_verifikation_array[i][j]));
       tr_body.appendChild(td_body);
@@ -556,7 +576,7 @@ function printVerifikation(t_verifikation_array) {
 
 
 
-  console.log(`t_heading: ${t_heading}`)
+  //console.log(`t_heading: ${t_heading}`)
 
 
 
@@ -564,25 +584,31 @@ function printVerifikation(t_verifikation_array) {
 
 function printKalkyl(t_salary, t_arbetgivaravift, t_salaryskatt) {
 
-  //console.log(`SocialAvg = ${t_arbetgivaravift}`)
+  
+  //console.log(`t_arbetaravgift=${t_arbetgivaravift == 31.41}`)
+  let bool_konto7510 = t_arbetgivaravift == 31.42;
 
   t_arbetgivaravift = t_arbetgivaravift / 100;//procent
-  var t_div_kalkyl = document.getElementById("skattutrakning");
-  var t_arbetgivaravift_kr = t_salary * t_arbetgivaravift;
+  
+  let t_div_kalkyl = document.getElementById("skattutrakning");
+  let t_arbetgivaravift_kr = t_salary * t_arbetgivaravift;
   t_arbetgivaravift_kr = t_arbetgivaravift_kr.toFixed(0);
-  var t_totlonkostnad = parseInt(t_arbetgivaravift_kr) + parseInt(t_salary);
-  var t_nettolon = parseInt(t_salary) - parseInt(t_salaryskatt);
+  let t_totlonkostnad = parseInt(t_arbetgivaravift_kr) + parseInt(t_salary);
+  let t_nettolon = parseInt(t_salary) - parseInt(t_salaryskatt);
 
+  //console.log(`t_arbetaravgift=${t_arbetgivaravift}`)
 
   t_div_kalkyl.innerHTML = "";//tömmer div element
-  var t_text1 = "Lön: " + t_salary + "kr <br>Arbetsgivaravgift:  " + t_arbetgivaravift_kr + "kr <br><b>Summa total lönekostnad: " + t_totlonkostnad + "kr</b>";
-  var t_text2 = "<br><br>Preliminär skatt: " + t_salaryskatt + "kr<br><b>Nettolön: " + t_nettolon + "kr</b>";
+  let t_text1 = "Lön: " + t_salary + "kr <br>Arbetsgivaravgift:  " + t_arbetgivaravift_kr + "kr <br><b>Summa total lönekostnad: " + t_totlonkostnad + "kr</b>";
+  let t_text2 = "<br><br>Preliminär skatt: " + t_salaryskatt + "kr<br><b>Nettolön: " + t_nettolon + "kr</b>";
+
 
   t_div_kalkyl.innerHTML = t_text1 + t_text2;
 
   //Skriver ut Verifikation
   //printVerifikation(createVerifikationArray(t_salary, t_arbetgivaravift_kr, t_salaryskatt, t_nettolon));
 
-  printVerifikation(createVerifikationArray(t_salary, t_arbetgivaravift_kr, t_salaryskatt, t_nettolon));
+  printVerifikation(createVerifikationArray(t_salary, t_arbetgivaravift_kr, t_salaryskatt, t_nettolon, bool_konto7510));
+  clearSkattetabell()
 
 }//end of printKalkyl
