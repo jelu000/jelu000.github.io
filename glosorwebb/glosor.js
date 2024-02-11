@@ -3,7 +3,7 @@ class Glosa {
 
     constructor(swe, eng) {
         this.swe = swe;
-        this.eng = eng
+        this.eng = eng;
     }
 }
 
@@ -22,10 +22,18 @@ button_starta_glostest.addEventListener("click", startaGlosTest);
 
 //let id_print_glosa_div = document.getElementById("id_print_glosa_div")
 
-let glos_test_div = document.getElementById("glos_test_div")
-glos_test_div.style.display = "none"
-b_id_sweglosa = document.getElementById("b_id_sweglosa")
+let glos_test_div = document.getElementById("glos_test_div");
+glos_test_div.style.display = "none";
+b_id_sweglosa = document.getElementById("b_id_sweglosa");
 
+
+const gloslistatest = [new Glosa("katt", "cat"),new Glosa("hund", "dog"),new Glosa("bil", "car")];
+
+console.log(gloslistatest)
+
+/*------------------------------------------------------------------
+Dessa är för att lägga till glosor
+---------------------------------------------------------------------*/
 function addGlosa() {
 
     console.log(`swe=${sweglosa.value}, eng=${englosa.value} `);
@@ -44,7 +52,7 @@ function printGlosor() {
 
     show_glosor.innerHTML = "";
     let html_string = "";
-    gloslista.forEach(element => {
+    gloslistatest.forEach(element => {
         html_string += `${element.swe} = ${element.eng} <br>`
 
     });
@@ -52,6 +60,11 @@ function printGlosor() {
     show_glosor.innerHTML = html_string;
 
 }
+
+
+/*-------------------------------------------------------------------------
+Startar glosförhöret
+------------------------------------------------------------------------------*/
 
 function startaGlosTest() {
 
@@ -62,7 +75,7 @@ function startaGlosTest() {
     //gloslista.forEach(element => {
     //printGlosaForhor(element.swe, element.eng)
 
-    if (gloslista.length > 0)
+    if (gloslistatest.length > 0)
         visaGlosa()
 
 
@@ -79,8 +92,8 @@ function visaGlosa() {
     //let html_str = `<b id='p_id_sweglosa'>${gloslista[int_glosnr].swe}</b><b>:</b><input id='glos_svar' type='text' width='10' maxlength='50'></input>` 
     //id_print_glosa_div.innerHTML = html_str
     input_glos_svar.value = ""
-    console.log(`Glosan= ${gloslista[int_glosnr].swe}`)
-    b_id_sweglosa.innerHTML = gloslista[int_glosnr].swe
+    //console.log(`Glosan= ${gloslistatest[int_glosnr].swe}`)
+    b_id_sweglosa.innerHTML = gloslistatest[int_glosnr].swe
 
 
 }
@@ -101,14 +114,30 @@ input_glos_svar.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         // Enter key was pressed
         // Add your code to handle the Enter key press here
-        console.log(`glosNr: ${int_glosnr}`)
+        user_svar = input_glos_svar.value;
+        
+        
+        console.log(`index: ${int_glosnr} usersvat= ${user_svar} och rätt svar= ${gloslistatest[int_glosnr].eng}`)
+        
+        
         int_glosnr++
 
-        if (int_glosnr < gloslista.length) {
-            visaGlosa()
+        visaGlosa()
+
+        if (int_glosnr < gloslistatest.length) {
+            
+            if (user_svar === gloslistatest[int_glosnr-1].eng)
+                alert(`Rätt! Svaret är ${gloslistatest[int_glosnr-1].eng} `);
+            
+            else
+                alert(`Fel! Svaret är ${gloslistatest[int_glosnr-1].eng} `);
+
+            
         }
         else {
             console.log("slut på glosförhör")
         }
+
+        
     }
 });
