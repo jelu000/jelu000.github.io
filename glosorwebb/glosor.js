@@ -16,7 +16,7 @@ const englosa = document.getElementById("engelsk_glosa");
 const addbutt = document.getElementById("add_button");
 addbutt.addEventListener("click", addGlosa);
 const show_glosor = document.getElementById("show_glosor");
-let input_glos_svar = document.getElementById("glos_svar");
+
 let button_starta_glostest = document.getElementById("start_glostest");
 button_starta_glostest.addEventListener("click", startaGlosTest);
 
@@ -24,7 +24,10 @@ button_starta_glostest.addEventListener("click", startaGlosTest);
 
 let glos_test_div = document.getElementById("glos_test_div");
 glos_test_div.style.display = "none";
-b_id_sweglosa = document.getElementById("b_id_sweglosa");
+let input_glos_svar = document.getElementById("glos_svar");
+let b_id_sweglosa = document.getElementById("b_id_sweglosa");
+const button_svara = document.getElementById("button_svara");
+button_svara.addEventListener("click", rattaGlosa);
 
 
 const gloslistatest = [new Glosa("katt", "cat"),new Glosa("hund", "dog"),new Glosa("bil", "car")];
@@ -110,10 +113,39 @@ function printGlosaForhor(t_sweglosa, t_engglosa) {
 
 }
 
-input_glos_svar.addEventListener("keydown", (event) => {
+function rattaGlosa(){
+    
+    user_svar = input_glos_svar.value;
+    console.log(`index: ${int_glosnr} usersvat= ${user_svar} och rätt svar= ${gloslistatest[int_glosnr].eng}`)
+        
+
+    int_glosnr++
+
+        visaGlosa()
+
+        if (int_glosnr < gloslistatest.length) {
+            
+            if (user_svar === gloslistatest[int_glosnr-1].eng)
+                alert(`Rätt! Svaret är ${gloslistatest[int_glosnr-1].eng} `);
+            
+            else
+                alert(`Fel! Svaret är ${gloslistatest[int_glosnr-1].eng} `);
+
+            
+        }
+        else {
+            console.log("slut på glosförhör")
+        }
+
+
+}
+
+// Enter key was pressed
+// Add your code to handle the Enter key press here
+//NOT IN USE
+/*input_glos_svar.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        // Enter key was pressed
-        // Add your code to handle the Enter key press here
+        
         user_svar = input_glos_svar.value;
         
         
@@ -140,4 +172,4 @@ input_glos_svar.addEventListener("keydown", (event) => {
 
         
     }
-});
+});*/
