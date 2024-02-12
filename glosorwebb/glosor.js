@@ -9,7 +9,9 @@ class Glosa {
 
 let test_time = false;
 let gloslista = [];
-int_glosnr = 0
+let int_glosnr = 0;
+let int_antalratt = 0;
+
 const add_glosor_div = document.getElementById("add_glosor");
 const sweglosa = document.getElementById("svensk_glosa");
 const englosa = document.getElementById("engelsk_glosa");
@@ -28,9 +30,12 @@ let input_glos_svar = document.getElementById("glos_svar");
 let b_id_sweglosa = document.getElementById("b_id_sweglosa");
 const button_svara = document.getElementById("button_svara");
 button_svara.addEventListener("click", rattaGlosa);
+let p_ratta_svar = document.getElementById("p_ratta_svar");
+let p_slut = document.getElementById("p_slut");
 
 
-const gloslistatest = [new Glosa("katt", "cat"),new Glosa("hund", "dog"),new Glosa("bil", "car")];
+
+const gloslistatest = [new Glosa("katt", "cat"), new Glosa("hund", "dog"), new Glosa("bil", "car")];
 
 console.log(gloslistatest)
 
@@ -113,30 +118,40 @@ function printGlosaForhor(t_sweglosa, t_engglosa) {
 
 }
 
-function rattaGlosa(){
-    
-    user_svar = input_glos_svar.value;
-    console.log(`index: ${int_glosnr} usersvat= ${user_svar} och rätt svar= ${gloslistatest[int_glosnr].eng}`)
-        
+function rattaGlosa() {
 
-    int_glosnr++
 
-        visaGlosa()
+    try {
+        user_svar = input_glos_svar.value;
+        //console.log(`index: ${int_glosnr} usersvat= ${user_svar} och rätt svar= ${gloslistatest[int_glosnr].eng}`)
 
-        if (int_glosnr < gloslistatest.length) {
-            
-            if (user_svar === gloslistatest[int_glosnr-1].eng)
-                alert(`Rätt! Svaret är ${gloslistatest[int_glosnr-1].eng} `);
-            
-            else
-                alert(`Fel! Svaret är ${gloslistatest[int_glosnr-1].eng} `);
 
-            
+
+        //if (int_glosnr < gloslistatest.length) {
+
+        if (user_svar === gloslistatest[int_glosnr].eng) {
+            //alert(`Rätt! Svaret är ${gloslistatest[int_glosnr].eng} `);
+            p_ratta_svar.innerHTML = `Rätt! Svaret är ${gloslistatest[int_glosnr].eng} `;
+            int_antalratt++;
         }
         else {
-            console.log("slut på glosförhör")
+            p_ratta_svar.innerHTML = `Fel! Svaret är ${gloslistatest[int_glosnr].eng} `
         }
 
+        int_glosnr++
+
+        if (int_glosnr < gloslistatest.length)
+            visaGlosa()
+        else
+            p_slut.innerHTML = `Glosförhöret är slut, du fick ${int_antalratt} rätt av ${gloslistatest.length} `
+        
+        input_glos_svar.focus();
+        
+
+    }
+    catch (err) {
+        alert("Något gick fel! \u263A ")
+    }
 
 }
 
