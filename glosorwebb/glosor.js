@@ -11,6 +11,7 @@ let test_time = false;
 let gloslista = [];
 let int_glosnr = 0;
 let int_antalratt = 0;
+const localstorage_namn = "glosorlistan"
 
 const add_glosor_div = document.getElementById("add_glosor");
 const sweglosa = document.getElementById("svensk_glosa");
@@ -34,10 +35,36 @@ let p_ratta_svar = document.getElementById("p_ratta_svar");
 let p_slut = document.getElementById("p_slut");
 
 
+/**getDataFromLocalStorage() Hämtar data localstorage */ 
+async function getDataFromLocalStorage(){
+    try {
+          
+        gloslista = await JSON.parse(localStorage.getItem(localstorage_namn) );
 
-const gloslistatest = [new Glosa("katt", "cat"), new Glosa("hund", "dog"), new Glosa("bil", "car")];
+        //Om billistan  är tom Null från localStorage
+        if (gloslista == null){
+            gloslista = []
+            show_glosor.innerHTML = "";
+        }
+        else{
+            printGlosor();
+        }
+        
+        
+    }
+    catch (e){
+        
+        console.log(`Fel: ${e}`)
+    }
+}
 
-console.log(gloslistatest)
+getDataFromLocalStorage();
+
+
+
+//const gloslistatest = [new Glosa("katt", "cat"), new Glosa("hund", "dog"), new Glosa("bil", "car")];
+
+//console.log(gloslistatest)
 
 /*------------------------------------------------------------------
 Dessa är för att lägga till glosor
@@ -47,6 +74,9 @@ function addGlosa() {
     console.log(`swe=${sweglosa.value}, eng=${englosa.value} `);
     let t_glosa = new Glosa(sweglosa.value, englosa.value);
     gloslista.push(t_glosa);
+    
+        
+    localStorage.setItem(localstorage_namn , JSON.stringify(gloslista));
 
     sweglosa.value = "";
     englosa.value = "";
@@ -60,7 +90,7 @@ function printGlosor() {
 
     show_glosor.innerHTML = "";
     let html_string = "";
-    gloslistatest.forEach(element => {
+    gloslista.forEach(element => {
         html_string += `${element.swe} = ${element.eng} <br>`
 
     });
@@ -83,7 +113,7 @@ function startaGlosTest() {
     //gloslista.forEach(element => {
     //printGlosaForhor(element.swe, element.eng)
 
-    if (gloslistatest.length > 0)
+    if (gloslista.length > 0)
         visaGlosa()
 
 
@@ -101,7 +131,7 @@ function visaGlosa() {
     //id_print_glosa_div.innerHTML = html_str
     input_glos_svar.value = ""
     //console.log(`Glosan= ${gloslistatest[int_glosnr].swe}`)
-    b_id_sweglosa.innerHTML = gloslistatest[int_glosnr].swe
+    b_id_sweglosa.innerHTML = gloslista[int_glosnr].swe
 
 
 }
@@ -129,21 +159,21 @@ function rattaGlosa() {
 
         //if (int_glosnr < gloslistatest.length) {
 
-        if (user_svar === gloslistatest[int_glosnr].eng) {
+        if (user_svar === gloslista[int_glosnr].eng) {
             //alert(`Rätt! Svaret är ${gloslistatest[int_glosnr].eng} `);
-            p_ratta_svar.innerHTML = `Rätt! Svaret är ${gloslistatest[int_glosnr].eng} `;
+            p_ratta_svar.innerHTML = `Rätt! Svaret är ${gloslista[int_glosnr].eng} `;
             int_antalratt++;
         }
         else {
-            p_ratta_svar.innerHTML = `Fel! Svaret är ${gloslistatest[int_glosnr].eng} `
+            p_ratta_svar.innerHTML = `Fel! Svaret är ${gloslista[int_glosnr].eng} `
         }
 
         int_glosnr++
 
-        if (int_glosnr < gloslistatest.length)
+        if (int_glosnr < gloslista.length)
             visaGlosa()
         else
-            p_slut.innerHTML = `Glosförhöret är slut, du fick ${int_antalratt} rätt av ${gloslistatest.length} `
+            p_slut.innerHTML = `Glosförhöret är slut, du fick ${int_antalratt} rätt av ${gloslista.length} `
         
         input_glos_svar.focus();
         
