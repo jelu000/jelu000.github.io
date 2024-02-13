@@ -161,11 +161,11 @@ function rattaGlosa() {
 
         if (user_svar === gloslista[int_glosnr].eng) {
             //alert(`Rätt! Svaret är ${gloslistatest[int_glosnr].eng} `);
-            p_ratta_svar.innerHTML = `Rätt! Svaret är ${gloslista[int_glosnr].eng} `;
+            p_ratta_svar.innerHTML = `Rätt!  ${gloslista[int_glosnr].swe}  = ${gloslista[int_glosnr].eng} `;
             int_antalratt++;
         }
         else {
-            p_ratta_svar.innerHTML = `Fel! Svaret är ${gloslista[int_glosnr].eng} `
+            p_ratta_svar.innerHTML = `Fel! ${user_svar}! rätt svar ${gloslista[int_glosnr].swe} = ${gloslista[int_glosnr].eng} `
         }
 
         int_glosnr++
