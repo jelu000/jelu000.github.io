@@ -6,15 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glosor</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="glosor.css">
     <script src="glosor.js" defer></script>
 </head>
 
 <body>
 
+    <h1 id="min_heading">Glosor</h1>
+
+    <p id="stycke1">
+        Här kan du träna och bli förhörd på din glosor.
+        <br> 
+        Glosorna sparas lokalt i denna enhets webbläsares lokala lagringsutrymme tills du väjer att rensa dem alla.
+    
+
+    </p>
+
     <div class="center_div">
 
-        <h1>Glosor</h1>
+        
 
 
         <div id="add_glosor">
@@ -27,7 +41,7 @@
 
                 <button id="add_button" tabindex="3">Lägg till glosa</button>
 
-                <button id="rensaglosor_button" onclick="delGlosorLocalStorage()" tabindex="0">Rensa alla glosor</button>
+                <button id="rensaglosor_button" onclick="delGlosorLocalStorage()" tabindex="0">Rensa glosor</button>
 
             </section>
             <hr>

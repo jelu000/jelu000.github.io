@@ -117,6 +117,9 @@ function startaGlosTest() {
 
     //Tömmer allt i add_glosor div
     add_glosor_div.innerHTML = ""
+    //blandar glosor med refference till arrayen
+    const shuffledArray = shuffle(gloslista);
+    console.log(`shuffledArray= ${shuffledArray}`);
 
     
     if (gloslista.length > 0)
@@ -124,8 +127,14 @@ function startaGlosTest() {
 
 
     glos_test_div.style.display = "block"
+    //sätter focus input för svar
+    input_glos_svar.focus();
 
 }
+
+const shuffle = (t_array_glosor) => { 
+    return t_array_glosor.sort(() => Math.random() - 0.5); 
+}; 
 
 function visaGlosa() {
     //om glosnr är mindre än antal glosor
