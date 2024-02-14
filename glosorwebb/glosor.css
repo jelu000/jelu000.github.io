@@ -39,5 +39,11 @@ input {
 #glos_svar {
     display: inline-block;
 }
+#butt_reload {
+    margin: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
 
 

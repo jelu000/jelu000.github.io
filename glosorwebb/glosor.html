@@ -27,7 +27,7 @@
 
                 <button id="add_button" tabindex="3">Lägg till glosa</button>
 
-                <button id="rensaglosor_button" tabindex="0">Rensa alla glosor</button>
+                <button id="rensaglosor_button" onclick="delGlosorLocalStorage()" tabindex="0">Rensa alla glosor</button>
 
             </section>
             <hr>
@@ -61,8 +61,9 @@
             
             <!--<div id="id_print_glosa_div">      </div>-->
         </div>
+    
     </div>
-
+<button id="butt_reload" onclick="location.reload()">Ladda om sidan / Starta om glosförhör</button>
 </body>
 
 </html>
