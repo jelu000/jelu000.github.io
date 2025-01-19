@@ -14,9 +14,12 @@ let salaryTaxArrayTabellNr = [];
 
 function tMain() {
   //console.log("prtovtest"); Skattesatser_kommuner_2024 v3.csv
-  getDatan(makeKomTaxArray, "Skattesatser_kommuner_2024_v3.csv");
+  //getDatan(makeKomTaxArray, "Skattesatser_kommuner_2024_v3.csv");
+  getDatan(makeKomTaxArray, "Skattesatser_kommuner_2025.csv");
+  
   //getDatan(makeKomTaxArray, "skattesatser-2019_2.csv");
-  getDatan(makeSalaryTaxArray, "SkattLon2024.csv");
+  //getDatan(makeSalaryTaxArray, "SkattLon2024.csv");
+  getDatan(makeSalaryTaxArray, "SkattLon2025.csv");
   //getDatan(makeSalaryTaxArray, "skattetabellermanad2019.csv");
   showSallaryButton(false);//hide button and textfield on salary page
   //makeKomTaxArray(data);
