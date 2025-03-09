@@ -1,0 +1,68 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left; /* Justera texten till vänster */
+    position: relative; /* Gör cellen till en positioneringskontext */
+  }
+  
+  /* Blå färg för tabellhuvudet och första kolumnen */
+  thead tr,
+  td:first-child {
+    background-color: lightblue;
+  }
+  
+  /* Färg för kolumnerna */
+  td:nth-child(2) { background-color: lightcoral; }
+  td:nth-child(3) { background-color: orange; }
+  td:nth-child(4) { background-color: yellow; }
+  td:nth-child(5) { background-color: white; }
+  td:nth-child(6) { background-color: yellow; }
+  td:nth-child(7) { background-color: orange; }
+  td:nth-child(8) { background-color: lightcoral; }
+  
+  /* Placera radioknappar längst till höger */
+  td input[type="radio"] {
+    position: absolute;
+    right: 8px; /* Justera avståndet från högerkanten */
+    top: 50%;
+    transform: translateY(-50%); /* Centrera vertikalt */
+
+
+    /* Grundläggande styling för radioknapparna */
+    appearance: none; /* Ta bort standardutseendet */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    
+  }
+
+  input[type="radio"]:checked {
+    /* Styling för markerade radioknappar */
+    border: 2px solid #007bff; /* Ändra kantlinjefärgen */
+    background-color: #007bff; /* Ändra bakgrundsfärgen */
+  }
+
+  input[type="radio"]:checked::before {
+    /* Lägg till en inre cirkel för att indikera markering */
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 3px;
+  }
