@@ -1,6 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
+    background-color: black;
 }
 
 
@@ -20,7 +21,7 @@ table {
   /* Blå färg för tabellhuvudet och första kolumnen */
   thead tr,
   td:first-child {
-    background-color: lightblue;
+    background-color: rgb(173, 193, 230);
   }
   
   /* Färg för kolumnerna */
@@ -69,4 +70,19 @@ table {
 
   .td_centered {
     text-align: center; /* Centrera texten horisontellt */
+  }
+
+  thead {
+    font-weight: bold;
+  }
+  .knappar{
+    margin: 1 em;
+  }
+
+  div{
+    padding: 10px;
+    color: black;
+  }
+  #rekomendation{
+    color: white;
   }
