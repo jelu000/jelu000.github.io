@@ -1,9 +1,9 @@
 /*Detta script är gjort av jens lundeqvist vid studier till undersköterska hos KUI */
 
 let low = "Sammanlagt 0-4 poäng: Låg klinisk risk, Avdelningsbaserade åtgärder"
-let medium = "3 poäng i en parameter: Klinisk risk låg/medium." //3 poäng i en parameter
-let medium_plus = "Sammanlagt 5-6 poäng: Medium klinisk risk, brådskande avdelningsbaserade åtgärder, bedömning av ansvarig läkare samt evetuellt team med kompetens i akut omhändertagande."
-let highr =  "Sammanlagt 7 poäng eller mer: Hög klinisk risk, akuta åtgärder och omedelbar bedömning av ansvarig läkare och personal med intesivvårdskompetens"
+let medium = "3 poäng i en parameter: Klinisk risk medium, rekomenderad nytt NEWS test om en timme." //3 poäng i en parameter
+let medium_plus = "Sammanlagt 5-6 poäng: Medium klinisk risk, brådskande avdelningsbaserade åtgärder, bedömning av ansvarig läkare samt evetuellt team med kompetens i akut omhändertagande. Tänk sepsis!"
+let highr =  "Sammanlagt 7 poäng eller mer: Hög klinisk risk, akuta åtgärder och omedelbar bedömning av ansvarig läkare och personal med intesivvårdskompetens, ex MIG team."
 
 
 document.getElementById("butt_calc_points").addEventListener("click", beraknaNews)
@@ -25,7 +25,8 @@ function beraknaNews(){
     if (param_arr.includes(3)){
         
         div_poeng_table.innerHTML = createTablePoeng(param_arr)
-        div_rekomentation.innerHTML = medium
+        let medium_tre = `<p class="pgul">${medium}</p>`
+        div_rekomentation.innerHTML = medium_tre
         
         
     }
@@ -39,13 +40,13 @@ function beraknaNews(){
          
 
         if (totala < 5){
-            behanlings_rek += `<p>${low}</p>`
+            behanlings_rek += `<p class="pgron">${low}</p>`
         }
         else if (totala < 7){
-            behanlings_rek += `<p>${medium_plus}</p>`
+            behanlings_rek += `<p class="pgul">${medium_plus}</p>`
         }
         else {
-            behanlings_rek += `<p>${highr}</p>`   
+            behanlings_rek += `<p class="prod">${highr}</p>`   
         }
 
         div_rekomentation.innerHTML = behanlings_rek

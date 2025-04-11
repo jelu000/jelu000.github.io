@@ -1,88 +1,298 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-    background-color: black;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  background-color: black;
+  padding-bottom: 40px;
 }
 
+h2{
+  display: block;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
 
 table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left; /* Justera texten till vänster */
-    position: relative; /* Gör cellen till en positioneringskontext */
-  }
-  
-  /* Blå färg för tabellhuvudet och första kolumnen */
-  thead tr,
-  td:first-child {
-    background-color: rgb(173, 193, 230);
-  }
-  
-  /* Färg för kolumnerna */
-  td:nth-child(2) { background-color: lightcoral; }
-  td:nth-child(3) { background-color: orange; }
-  td:nth-child(4) { background-color: yellow; }
-  td:nth-child(5) { background-color: white; }
-  td:nth-child(6) { background-color: yellow; }
-  td:nth-child(7) { background-color: orange; }
-  td:nth-child(8) { background-color: lightcoral; }
-  
-  /* Placera radioknappar längst till höger */
-  td input[type="radio"] {
-    /*position: absolute;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  /* Justera texten till vänster */
+  position: relative;
+  /* Gör cellen till en positioneringskontext */
+}
+
+/* Blå färg för tabellhuvudet och första kolumnen */
+thead tr,
+td:first-child {
+  background-color: rgb(173, 193, 230);
+}
+
+/* Färg för kolumnerna */
+td:nth-child(2) {
+  background-color: lightcoral;
+}
+
+td:nth-child(3) {
+  background-color: orange;
+}
+
+td:nth-child(4) {
+  background-color: yellow;
+}
+
+td:nth-child(5) {
+  background-color: white;
+}
+
+td:nth-child(6) {
+  background-color: yellow;
+}
+
+td:nth-child(7) {
+  background-color: orange;
+}
+
+td:nth-child(8) {
+  background-color: lightcoral;
+}
+
+/* Placera radioknappar längst till höger */
+td input[type="radio"] {
+  /*position: absolute;
     right: 8px;   Justera avståndet från högerkanten 
     top: 50%;
     transform: translateY(-50%);  Centrera vertikalt */
 
 
-    /* Grundläggande styling för radioknapparna */
-    appearance: none; /* Ta bort standardutseendet */
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    outline: none;
-    
-  }
+  /* Grundläggande styling för radioknapparna */
+  appearance: none;
+  /* Ta bort standardutseendet */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
 
-  input[type="radio"]:checked {
-    /* Styling för markerade radioknappar */
-    border: 2px solid #007bff; /* Ändra kantlinjefärgen */
-    background-color: #007bff; /* Ändra bakgrundsfärgen */
-  }
+}
 
-  input[type="radio"]:checked::before {
-    /* Lägg till en inre cirkel för att indikera markering */
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    margin: 3px;
-  }
+input[type="radio"]:checked {
+  /* Styling för markerade radioknappar */
+  border: 2px solid #007bff;
+  /* Ändra kantlinjefärgen */
+  background-color: #007bff;
+  /* Ändra bakgrundsfärgen */
+}
 
-  .td_centered {
-    text-align: center; /* Centrera texten horisontellt */
-  }
+input[type="radio"]:checked::before {
+  /* Lägg till en inre cirkel för att indikera markering */
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 3px;
+}
 
-  thead {
-    font-weight: bold;
-  }
-  .knappar{
-    margin: 1 em;
-  }
+.td_centered {
+  text-align: center;
+  /* Centrera texten horisontellt */
+}
 
-  div{
-    padding: 10px;
-    color: black;
-  }
-  #rekomendation{
-    color: white;
-  }
+thead {
+  font-weight: bold;
+}
+
+.knappar {
+  margin: 10px;
+}
+
+div {
+  padding: 10px;
+  color: black;
+}
+
+#rekomendation {
+  color: white;
+}
+
+.sammanfattning {
+  color: white;
+  margin: 20px;
+}
+
+.rubrik {
+  display: block;
+  /* Om headern inte är block som standard */
+  width: 500px;
+  /* Ange en bredd mindre än div:en */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pgron{
+  color: green;
+}
+.pgul{
+  color: yellow;
+}
+.prod{
+  color: red;
+}
+
+@media (max-width: 600px) {
+
+/* Standardstilar (kan eventuellt behöva justeras ytterligare för små skärmar) */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium; /* Kan behöva minskas för små skärmar */
+  background-color: black;
+  padding-bottom: 20px; /* Minskad padding */
+}
+
+h2 {
+  display: block;
+  width: 90%; /* Gör rubriken mer responsiv */
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 1.5em; /* Anpassa fontstorleken */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.8em; /* Minska fontstorleken i tabellen */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 6px; /* Minskad padding */
+  text-align: left;
+  position: relative;
+}
+
+/* Blå färg för tabellhuvudet och första kolumnen */
+thead tr,
+td:first-child {
+  background-color: rgb(173, 193, 230);
+}
+
+/* Färg för kolumnerna */
+td:nth-child(2) {
+  background-color: lightcoral;
+}
+
+td:nth-child(3) {
+  background-color: orange;
+}
+
+td:nth-child(4) {
+  background-color: yellow;
+}
+
+td:nth-child(5) {
+  background-color: white;
+}
+
+td:nth-child(6) {
+  background-color: yellow;
+}
+
+td:nth-child(7) {
+  background-color: orange;
+}
+
+td:nth-child(8) {
+  background-color: lightcoral;
+}
+
+/* Anpassa placering av radioknappar för små skärmar */
+td input[type="radio"] {
+  appearance: none;
+  width: 16px; /* Minskad storlek */
+  height: 16px; /* Minskad storlek */
+  border: 1px solid #ccc; /* Tunnare border */
+  border-radius: 50%;
+  outline: none;
+  margin-left: 5px; /* Justera marginal */
+}
+
+input[type="radio"]:checked {
+  border: 1px solid #007bff;
+  background-color: #007bff;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 8px; /* Minskad storlek */
+  height: 8px; /* Minskad storlek */
+  background-color: white;
+  border-radius: 50%;
+  margin: 3px; /* Justera marginal */
+}
+
+.td_centered {
+  text-align: center;
+}
+
+thead {
+  font-size: 0.9em; /* Minska fontstorleken i tabellhuvudet */
+}
+
+.knappar {
+  margin: 5px; /* Minskad marginal */
+}
+
+div {
+  padding: 5px; /* Minskad padding */
+  color: black;
+}
+
+#rekomendation {
+  color: white;
+  font-size: 0.9em; /* Minskad fontstorlek */
+}
+
+.sammanfattning {
+  color: white;
+  margin: 10px; /* Minskad marginal */
+  font-size: 0.9em; /* Minskad fontstorlek */
+}
+
+.rubrik {
+  display: block;
+  width: 90%; /* Gör rubriken mer responsiv */
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em; /* Anpassa fontstorleken */
+}
+
+.pgron {
+  color: green;
+  font-size: 0.9em; /* Minskad fontstorlek */
+}
+
+.pgul {
+  color: yellow;
+  font-size: 0.9em; /* Minskad fontstorlek */
+}
+
+.prod {
+  color: red;
+  font-size: 0.9em; /* Minskad fontstorlek */
+}
+
+}
+
+
+

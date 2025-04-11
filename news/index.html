@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,117 +8,156 @@
     <script src="news.js" defer></script>
     <link rel="stylesheet" href="news.css">
 </head>
+
 <body>
-    
-<div class="main">
 
-    <table>
-        <thead>
-          <tr>
-            <th>Parameter</th>
-            <th>3 poäng</th>
-            <th>2 poäng</th>
-            <th>1 poäng</th>
-            <th>0 poäng</th>
-            <th>1 poäng</th>
-            <th>2 poäng</th>
-            <th>3 poäng</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <tr>
-                <td>Andningsfrekvens</td>
-                <td class="td_centered">&le;8<br><input type="radio" name="grupp_andningsf" value="3"></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_andningsf" value="option2">--></td>
-                <td class="td_centered">9-11<br><input type="radio" name="grupp_andningsf" value="1"></td>
-                <td class="td_centered">12-20<br><input type="radio" name="grupp_andningsf" value="0" checked></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_andningsf" value="option2">--></td>
-                <td class="td_centered">21-24<br><input type="radio" name="grupp_andningsf" value="2"></td>
-                <td class="td_centered">&ge;25<br><input type="radio" name="grupp_andningsf" value="3"></td>
-            </tr>
-            <tr>
-                <td>Syremättnad 1</td>
-                <td class="td_centered">&le;91<br><input type="radio" name="grupp_syrem" value="3"></td>
-                <td class="td_centered">92-93<br><input type="radio" name="grupp_syrem" value="2"></td>
-                <td class="td_centered">94-95<br><input type="radio" name="grupp_syrem" value="1"></td>
-                <td class="td_centered">&ge;96<br><input type="radio" name="grupp_syrem" value="0" checked></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrem1" value="option1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrem1" value="option1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrem1" value="option1">--></td>
-            </tr>
-            <tr>
-                <td>Syremättnad 2 (används på läkares ordiantion*)</td>
-                <td class="td_centered">&le;83<br><input type="radio" name="grupp_syrem" value="3"></td>
-                <td class="td_centered">84-85<br><input type="radio" name="grupp_syrem" value="2"></td>
-                <td class="td_centered">86-87<br><input type="radio" name="grupp_syrem" value="1"></td>
-                <td class="td_centered">88-92<br><input type="radio" name="grupp_syrem" value="0"></td>
-                <td class="td_centered">93-94 med syrgas<br><input type="radio" name="grupp_syrem" value="1"></td>
-                <td class="td_centered">95-96 med syrgas<br><input type="radio" name="grupp_syrem" value="2"></td>
-                <td class="td_centered">&ge;97 med syrgas<br><input type="radio" name="grupp_syrem" value="3"></td>
-            </tr>
-            <tr>
-                <td>Tillförd syrgas</td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
-                <td class="td_centered">Ja<br><input type="radio" name="grupp_syrgas" value="2"></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
-                <td class="td_centered">Nej<br><input type="radio" name="grupp_syrgas" value="0" checked></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
-            </tr>
-            <tr>
-                <td>Systoliskt blodtryck</td>
-                <td class="td_centered">&le;90<br><input type="radio" name="grupp_blodtryck" value="3"></td>
-                <td class="td_centered">91-100<br><input type="radio" name="grupp_blodtryck" value="2"></td>
-                <td class="td_centered">101-110<br><input type="radio" name="grupp_blodtryck" value="1"></td>
-                <td class="td_centered">111-219<br><input type="radio" name="grupp_blodtryck" value="0" checked></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_blodtryck" value="1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_blodtryck" value="option1">--></td>
-                <td class="td_centered">&ge;220<br><input type="radio" name="grupp_blodtryck" value="3"></td>
-            </tr>
-            <tr>
-                <td>Pulsfrekvens**</td>
-                <td class="td_centered">&le;40<br><input type="radio" name="grupp_puls" value="3"></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_puls" value="option1">--></td>
-                <td class="td_centered">41-50<br><input type="radio" name="grupp_puls" value="1"></td>
-                <td class="td_centered">51-90<br><input type="radio" name="grupp_puls" value="0" checked></td>
-                <td class="td_centered">91-110<br><input type="radio" name="grupp_puls" value="1"></td>
-                <td class="td_centered">111-130<br><input type="radio" name="grupp_puls" value="2"></td>
-                <td class="td_centered">&ge;131<br><input type="radio" name="grupp_puls" value="3"></td>
-            </tr>
-            <tr>
-                <td>Medvetandegrad***</td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
-                <td class="td_centered">Alert<br><input type="radio" name="grupp_medveten" value="0" checked></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
-                <td class="td_centered">CVPU<br><input type="radio" name="grupp_medveten" value="3"></td>
-            </tr>
-            <tr>
-                <td>temperatur</td>
-                <td class="td_centered">&le;35<br><input type="radio" name="grupp_temp" value="3"></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_temp" value="option1">--></td>
-                <td class="td_centered">35,1-36,0<br><input type="radio" name="grupp_temp" value="1"></td>
-                <td class="td_centered">36,1-38,0<br><input type="radio" name="grupp_temp" value="0" checked></td>
-                <td class="td_centered">38,1-39,0<br><input type="radio" name="grupp_temp" value="1"></td>
-                <td class="td_centered">&ge;39,1<br><input type="radio" name="grupp_temp" value="2"></td>
-                <td class="td_centered"><!--<input type="radio" name="grupp_temp" value="option1">--></td>
-            </tr>
+    <div class="main">
+        <h2>NEWS-skalan</h2>
+        <div class="sammanfattning">
+            <p>
+                Detta specialarbete och rapport är gjort som en del av undersköterskeutbildningen hos
+                (KUI)
+            </p>
 
-        </tbody>
-      </table>
-      
+            <p>
+                Vitala parametrar har länge använts för att fastställa sjukvårdstillstånd för sjuka människor
+                inom vården. I den här rapporten tänkte jag undersöka och skriva om den vanligaste
+                metoden för att fastställa hälsotillstånd hos akut sjuka människor.
+            </p>
 
-      <div name="svar" id="svar">
-        <button class="knappar" id="butt_calc_points">Beräkna poäng</button>
-        
-        <div id="poeng_table"></div>
+            <p>
+                Det finns flera olika standardiserade metoder för att mäta viktiga vitalparametrar för att mäta
+                sjukdomstillstånd men det finns en som slagit igenom mer. Den kallas NEWS (National Early
+                Warning News Score) skalan. NEWS skalan utvecklades i England och används i flera
+                länder och det finns forskning som visar dess fördelar.
+            </p>
 
-        <div id="rekomendation"></div>
-      </div>
+            <p>
+                Syftet med att använda en standardiserad metod för att fastställa hälsostatusen är att det
+                finns fördelar med det. En fördel med standard är att alla gör lika oavsett vilket sjukhus man
+                hamnar på om man blir allvarligt sjuk. En annan fördel är att om man gör testet regelbundet
+                med jämna tidsintervall så upptäcker man lättare om tillståndet för patienten förändras och
+                på så sätt upptäcka allvarliga sjukdomstillstånd som kan uppstå.
+            </p>
+
+            <p>
+                De vitala parametrar som man använder vid en NEWS undersökning är andningsfrekvens,
+                syremättnad, tillförd syrgas, systoliskt blodtryck, puls, medvetandegrad och
+                kroppstemperatur. Syremättnad finns i två olika parametrar där bara en av dessa ska
+                användas. Det är läkaren som bestämmer vilken av de två som ska registreras.
+            </p>
+            <p>Rapporten finns och ladda ner här nedan och man kan prova NEWS2 genom att ange parametrar i appen nedan.</p>
+            <h4 class="rubrik"><a href="exJobbJensLundeqvist_rev1.pdf">En studie om NEWS-skalan &amp; dess användning i sjukvården</a></h4>
+            
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>3 poäng</th>
+                    <th>2 poäng</th>
+                    <th>1 poäng</th>
+                    <th>0 poäng</th>
+                    <th>1 poäng</th>
+                    <th>2 poäng</th>
+                    <th>3 poäng</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Andningsfrekvens</td>
+                    <td class="td_centered">&le;8<br><input type="radio" name="grupp_andningsf" value="3"></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_andningsf" value="option2">--></td>
+                    <td class="td_centered">9-11<br><input type="radio" name="grupp_andningsf" value="1"></td>
+                    <td class="td_centered">12-20<br><input type="radio" name="grupp_andningsf" value="0" checked></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_andningsf" value="option2">--></td>
+                    <td class="td_centered">21-24<br><input type="radio" name="grupp_andningsf" value="2"></td>
+                    <td class="td_centered">&ge;25<br><input type="radio" name="grupp_andningsf" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Syremättnad 1</td>
+                    <td class="td_centered">&le;91<br><input type="radio" name="grupp_syrem" value="3"></td>
+                    <td class="td_centered">92-93<br><input type="radio" name="grupp_syrem" value="2"></td>
+                    <td class="td_centered">94-95<br><input type="radio" name="grupp_syrem" value="1"></td>
+                    <td class="td_centered">&ge;96<br><input type="radio" name="grupp_syrem" value="0" checked></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrem1" value="option1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrem1" value="option1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrem1" value="option1">--></td>
+                </tr>
+                <tr>
+                    <td>Syremättnad 2 (används på läkares ordiantion*)</td>
+                    <td class="td_centered">&le;83<br><input type="radio" name="grupp_syrem" value="3"></td>
+                    <td class="td_centered">84-85<br><input type="radio" name="grupp_syrem" value="2"></td>
+                    <td class="td_centered">86-87<br><input type="radio" name="grupp_syrem" value="1"></td>
+                    <td class="td_centered">88-92<br><input type="radio" name="grupp_syrem" value="0"></td>
+                    <td class="td_centered">93-94 med syrgas<br><input type="radio" name="grupp_syrem" value="1"></td>
+                    <td class="td_centered">95-96 med syrgas<br><input type="radio" name="grupp_syrem" value="2"></td>
+                    <td class="td_centered">&ge;97 med syrgas<br><input type="radio" name="grupp_syrem" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Tillförd syrgas</td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
+                    <td class="td_centered">Ja<br><input type="radio" name="grupp_syrgas" value="2"></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
+                    <td class="td_centered">Nej<br><input type="radio" name="grupp_syrgas" value="0" checked></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_syrgas" value="option1">--></td>
+                </tr>
+                <tr>
+                    <td>Systoliskt blodtryck</td>
+                    <td class="td_centered">&le;90<br><input type="radio" name="grupp_blodtryck" value="3"></td>
+                    <td class="td_centered">91-100<br><input type="radio" name="grupp_blodtryck" value="2"></td>
+                    <td class="td_centered">101-110<br><input type="radio" name="grupp_blodtryck" value="1"></td>
+                    <td class="td_centered">111-219<br><input type="radio" name="grupp_blodtryck" value="0" checked>
+                    </td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_blodtryck" value="1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_blodtryck" value="option1">--></td>
+                    <td class="td_centered">&ge;220<br><input type="radio" name="grupp_blodtryck" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Pulsfrekvens**</td>
+                    <td class="td_centered">&le;40<br><input type="radio" name="grupp_puls" value="3"></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_puls" value="option1">--></td>
+                    <td class="td_centered">41-50<br><input type="radio" name="grupp_puls" value="1"></td>
+                    <td class="td_centered">51-90<br><input type="radio" name="grupp_puls" value="0" checked></td>
+                    <td class="td_centered">91-110<br><input type="radio" name="grupp_puls" value="1"></td>
+                    <td class="td_centered">111-130<br><input type="radio" name="grupp_puls" value="2"></td>
+                    <td class="td_centered">&ge;131<br><input type="radio" name="grupp_puls" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Medvetandegrad***</td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
+                    <td class="td_centered">Alert<br><input type="radio" name="grupp_medveten" value="0" checked></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_medveten" value="option1">--></td>
+                    <td class="td_centered">CVPU<br><input type="radio" name="grupp_medveten" value="3"></td>
+                </tr>
+                <tr>
+                    <td>temperatur</td>
+                    <td class="td_centered">&le;35<br><input type="radio" name="grupp_temp" value="3"></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_temp" value="option1">--></td>
+                    <td class="td_centered">35,1-36,0<br><input type="radio" name="grupp_temp" value="1"></td>
+                    <td class="td_centered">36,1-38,0<br><input type="radio" name="grupp_temp" value="0" checked></td>
+                    <td class="td_centered">38,1-39,0<br><input type="radio" name="grupp_temp" value="1"></td>
+                    <td class="td_centered">&ge;39,1<br><input type="radio" name="grupp_temp" value="2"></td>
+                    <td class="td_centered"><!--<input type="radio" name="grupp_temp" value="option1">--></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+        <div id="svar">
+            <button class="knappar" id="butt_calc_points">Beräkna poäng</button>
+
+            <div id="poeng_table"></div>
+
+            <div id="rekomendation"></div>
+        </div>
 
 
     </div>
@@ -125,4 +165,5 @@
 
 
 </body>
+
 </html>
