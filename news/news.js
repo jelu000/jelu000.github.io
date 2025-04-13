@@ -21,8 +21,9 @@ function beraknaNews(){
     param_arr[5] = parseInt(document.querySelector('input[name="grupp_medveten"]:checked')?.value);
     param_arr[6] = parseInt(document.querySelector('input[name="grupp_temp"]:checked')?.value);
 
-    
-    if (param_arr.includes(3)){
+    let totala = param_arr[0] + param_arr[1] + param_arr[2] + param_arr[3] + param_arr[4] + param_arr[5] + param_arr[6]
+
+    if (param_arr.includes(3) && totala<5){
         
         div_poeng_table.innerHTML = createTablePoeng(param_arr)
         let medium_tre = `<p class="pgul">${medium}</p>`
@@ -31,13 +32,10 @@ function beraknaNews(){
         
     }
     else{
-        
-        let totala = param_arr[0] + param_arr[1] + param_arr[2] + param_arr[3] + param_arr[4] + param_arr[5] + param_arr[6]
-        div_poeng_table.innerHTML = createTablePoeng(param_arr)
-        
-        let behanlings_rek = `<p>Den samman lagda NEWS poängen blir ${totala}</p>`
 
-         
+        div_poeng_table.innerHTML = createTablePoeng(param_arr)
+        let behanlings_rek = `<p>Den samman lagda NEWS poängen blir ${totala}</p>`
+ 
 
         if (totala < 5){
             behanlings_rek += `<p class="pgron">${low}</p>`
